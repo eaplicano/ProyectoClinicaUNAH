@@ -1,0 +1,18 @@
+
+<div>
+
+  <h2>Create Diagnostico</h2>
+  <div id="borde">
+    <form action="" method="POST">
+
+      <input type="number" placeholder="Codigo Diagnostico" name="COD_DIAGNOSTICO" required pattern="[0-9]+"></input>
+
+      <input type="text" placeholder="Tipo de Diagnostico" name="TIP_DIAGNOSTICO" required pattern="[a-zA-Z]{5,50}" title="Solo se permite texto. Tamaño mínimo: 5. Tamaño máximo: 50" ></input>
+
+      <input type="text" placeholder="Descripcion de Diagnostico" name="DES_DIAGNOSTICO" pattern="[A-Za-z0-9]+{5,255}" title="Tamaño máximo: 255"></input>
+
+      <button id="btnSummit" type="submit">Send</button>
+            
+    </form>
+  </div>
+</div>

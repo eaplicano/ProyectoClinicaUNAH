@@ -1,0 +1,46 @@
+<div>
+  <h2>Detalle Pacientes</h2>
+  <div>
+    <div id="divNew">
+      <a href="/pacientes_create">Nuevo Paciente
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Id del Paciente</th>
+            <th class="m-2">Nombre del Paciente</th>
+            <th class="m-2">Apellido del Paciente</th>
+            <th class="m-2">Fecha de Nacimiento</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+            {{#each tasks}}
+            <tr>
+              <td >{{COD_PACIENTE}}</td>
+              <td >{{NOM_PACIENTE}}</td>
+              <td >{{APE_PACIENTE}}</td>
+              <td type="date">{{FEC_NACIMIENTO}}</td>
+             
+              <td id="actions">
+                <form action="/Pacientes/delete" method="POST" class="mx-2">
+                  <input type="hidden" value="{{COD_PACIENTE}}" name="id">
+                  <button id="trash" type="submit"><i class="fas fa-trash"></i></button>
+                </form>
+              </td>
+              <td>
+                <a href="/Pacientes/pacientes_edit/{{COD_PACIENTE}}">
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+              </td>
+            </tr>
+            {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

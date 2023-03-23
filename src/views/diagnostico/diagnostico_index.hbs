@@ -1,0 +1,46 @@
+
+<div>
+  <h2>Detalle de Diagnostico</h2>
+  <div>
+    <div id="divNew">
+      <a href="/diagnostico_create">Nueva Diagnostico
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Id de Diagnostico</th>
+            <th class="m-2">Tipo de Diagnostico</th>
+            <th class="m-2">Descripcion de Diagnostico</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+          {{#each tasks}}
+          <tr>
+            <td class="m-2">{{COD_DIAGNOSTICO}}</td>
+            <td class="m-2">{{TIP_DIAGNOSTICO}}</td>
+            <td class="m-2 ">{{DES_DIAGNOSTICO}}</td>
+          
+              <form action="/diagnostico/delete" method="POST" class="mx-2">
+                <input type="hidden" value="{{COD_DIAGNOSTICO}}" name="id">
+                <button id="trash" type="submit">
+                  <i class="fas fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <a href="/diagnostico/diagnostico_edit/{{COD_DIAGNOSTICO}}" >
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+            </td>
+          </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>
+

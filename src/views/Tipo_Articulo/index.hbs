@@ -1,0 +1,45 @@
+<div>
+  <h2>Tipo Articulo</h2>
+    <div>
+    <div id="divNew">
+      <a href="/TipArt_create">Nuevo Tipo Articulo
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div> 
+    <div id="tabla">
+      <table>
+        <thead>
+         <tr>
+          <th class="m-2">Id del Tipo Articulo</th>
+          <th class="m-2">Nombre del Tipo Articulo</th>
+          <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="row">
+        {{#each tasks}}
+        <tr>
+          <td class="m-2">{{COD_TIP_ARTICULO}}</td>
+          <td class="m-2">{{NOM_TIP_ARTICULO}}</td>
+                 
+          {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+          <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+          <td id="actions">
+            <form action="/Tipo_Articulo/delete" method="POST" class="mx-2">
+              <input type="hidden" value="{{COD_TIP_ARTICULO}}" name="id">
+              <button id="trash" type="submit">
+                <i class="fas fa-trash"></i></button>
+            </form>
+          </td>
+          <td> 
+            <a href="/Tipo_Articulo/TipArt_edit/{{COD_TIP_ARTICULO}}" >
+              <button id="edit"><i class="fas fa-pen"></i></button></a>
+          </td>
+         </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

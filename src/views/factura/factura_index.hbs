@@ -1,0 +1,48 @@
+
+  <div>
+    <h2>Detalle de Factura {{Usuarios}}</h2>
+    <div id="divNew">
+      <a href="/factura_create">Nueva Factura
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div> 
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Cod_factura</th>
+            <th class="m-2">Fec_factura</th>
+            <th class="m-2">Cod_paciente</th>
+            <th class="m-2">Mon_isv</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+          {{#each tasks}}
+          <tr>
+            <td class="py-3 px-6">{{COD_FACTURA}}</td>
+            <td class="p-3 text-center">{{FEC_FACTURA}}</td>
+            <td class="p-3 ">{{COD_PACIENTE}}</td>
+            <td class="p-3">{{MON_ISV}}</td>
+            
+            {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+            <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+            <td id="actions">
+              <form action="/Articulo/delete" method="POST" class="mx-2">
+                <input type="hidden" value="{{COD_FACTURA}}" name="id">
+                <button id="trash" type="submit">
+                  <i class="fas fa-trash"></i></button>
+              </form>
+              </td>
+              <td>
+              <a href="/factura/factura_edit/{{COD_FACTURA}}">
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+            </td>
+          </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>

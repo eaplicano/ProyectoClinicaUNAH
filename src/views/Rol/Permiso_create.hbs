@@ -1,0 +1,61 @@
+<div>
+ 
+  <h2>Permisos</h2>
+  <div id="borde">
+    <form  action="" method="POST">
+ 
+    {{!-- Código de Paciente <input id="columna" type="text"  name="COD_PACIENTE"> --}}
+ 
+    Rol     <select name="ROL" id="ROL">
+              <option value="1">Administrador</option>
+              <option value="2">Usuario</option>
+    </select>
+ 
+    <br></br>
+    Privilegios
+    <br></br>
+     <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">No.</th>
+            <th class="m-2">Pantalla</th>
+            <th class="m-2">Insertar</th>
+            <th class="m-2">Actualizar</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Consultar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+            {{#each tasks}}
+            <tr>
+                <td>{{COD_OBJETO}}</td>
+                <td>{{OBJETO}}</td>
+                <td><input name="PERMISO_INSERCION" type="checkbox" id="insertar" /></td>
+                <td><input name="PERMISO_ACTUALIZACION" type="checkbox" id="modificar" /></td>
+                <td><input name="PERMISO_ELIMINACION" type="checkbox" id="eliminar" /></td>
+                <td><input name="PERMISO_CONSULTAR" type="checkbox" id="visualizar" /></td>
+            </tr>
+            {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+
+<br></br>
+<br></br>
+     <button id="btnSummit" onblur="myFunction()" type="submit" >Guardar</button>
+    <script>
+    function myFunction() {
+     alert("Permisos Creados");
+    }
+    </script>
+ 
+    </form>
+
+        <button id="btnCancel" ><a class="colorbtn" href="/Rol_Resumen">Cancelar</a></button>
+
+  </div>
+</div>  
+ 

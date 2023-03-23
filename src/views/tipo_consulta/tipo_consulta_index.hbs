@@ -1,0 +1,44 @@
+
+<div>
+  <h2>Detalle de Tipo de Consulta</h2>
+  <div>
+    <div id="divNew">
+      <a href="/tipo_consulta_create">Nueva Tipo de Consulta
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Id Tipo de Consulta</th>
+            <th class="m-2">Nombre</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+          {{#each tasks}}
+          <tr>
+            <td class="m-2">{{COD_TIP_CONSULTA}}</td>
+            <td class="m-2">{{NOM_TIP_CONSULTA}}</td>
+            
+
+              <form action="/tipo_consulta/delete" method="POST" class="mx-2">
+                <input type="hidden" value="{{COD_TIP_CONSULTA}}" name="id">
+                <button id="trash" type="submit">
+                  <i class="fas fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <a href="/tipo_consulta/tipo_consulta_edit/{{COD_TIP_CONSULTA}}" >
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+            </td>
+          </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>

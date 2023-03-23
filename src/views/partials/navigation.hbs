@@ -1,0 +1,125 @@
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <i class="fas fa-user-md"></i> Sistema CUM
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        {{#if user.USUARIO}}
+       
+        
+
+        {{!-- <script lang="javascript">
+          const reloadUsingLocationHash = () => {
+            window.location.hash = "reload";
+          }
+          window.onload = reloadUsingLocationHash();
+        </script> --}}
+          
+        {{!-- <script> 
+        function actualizar(){location.reload(true);}
+        let intento=0;
+        if (intento<1){
+          location.reload();</script>;
+          intento++;
+          console.log(intento);
+        }
+        </script> --}}
+        {{!-- menu desplegable --}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/expediente"
+            aria-haspopup="true" aria-expanded="false">
+          Expedientes
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/consulta" 
+            aria-haspopup="true" aria-expanded="false">
+          Consulta
+          </a>
+        </li>
+        {{!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/factura" 
+          aria-haspopup="true" aria-expanded="false">
+          Facturación
+          </a>
+        </li> --}}
+
+        {{!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/Inventario" 
+          aria-haspopup="true" aria-expanded="false">
+          Inventario
+          </a>
+        </li> --}}
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+          Seguridad
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/Rol/Rol_Resumen">Creación de Roles</a>
+            {{!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/rol/">Gestión de Roles</a> --}}
+            {{!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/Permiso">Permisos</a> --}}
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/auth">Usuarios</a>
+            
+                      </div>
+        </li>
+
+       
+
+        {{!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+          Parametros
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/Pacientes">Pacientes</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/clinica">Clinica</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/tipo_consulta">Tipo Consulta</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/Articulo">Articulo</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/Tipo_Articulo">Tipo de Articulo</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/Servicio">Servicios</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/Tipo_Servicio">Tipo de Servicios</a>
+          </div>
+        </li> --}}
+
+  
+
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Salir</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/signin">Iniciar Sesion</a>
+        </li>
+        {{!-- <li class="nav-item">
+          <a class="nav-link" href="/signup">SignUp</a>
+        </li> --}}
+        {{!-- <script> 
+          intento=0;
+          console.log(intento);
+        </script> --}}
+
+        {{/if}}
+      </ul>
+    </div>
+    
+  </div>
+</nav>

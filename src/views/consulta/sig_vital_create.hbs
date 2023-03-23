@@ -1,0 +1,95 @@
+
+<div>
+  <h2>Pre-Clinica</h2>
+  <div id="borde">
+    {{#each tasks}}
+      <form action="" method="POST">
+        Código de Consulta<input type="number" placeholder="Codigo Signos Vitales" name="COD_CONSULTA" value="{{COD_CONSULTA}}" required pattern="[0-9]+"></input> 
+        {{!-- Código de Preclinica<input type="number" placeholder="Codigo Signos Vitales" name="COD_PRECLINICA" value="{{COD_PRECLINICA}}" required pattern="[0-9]+"></input>  --}}
+
+        <h5>Signos Vitales</h5><br>
+         <input  type="textarea" class="columna" placeholder="Presión Arterial" name="DES_PRE_ARTERIAL" value="{{DES_PRE_ARTERIAL}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+          <input  type="text" class="columna" placeholder="Frecuencia Cardiaca" name="DES_FRE_CARDIACA" value="{{DES_FRE_CARDIACA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+          <input  type="text" class="columna" placeholder="Frecuencia Respiratoria" name="DES_FRE_RESPIRATORIA" value="{{DES_FRE_RESPIRATORIA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+         <input  type="text" class="columna" placeholder="Pulso" name="DES_PULSO" value="{{DES_PULSO}}"  pattern="[A-Za-z 0-9 /]+{5,250}" title="Tamaño máximo: 250"></input>
+         <input  type="text" class="columna" placeholder="Temperatura" name="DES_TEMPERATURA" value="{{DES_TEMPERATURA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+         <input  type="text" class="columna" placeholder="Saturación Oxigeno" name="DES_SAT_OXIGENO" value="{{DES_SAT_OXIGENO}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+         <input  type="text" class="columna" placeholder="Talla" name="DES_TALLA" value="{{DES_TALLA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+         <input  type="text" class="columna" placeholder="Peso" name="DES_PESO" value="{{DES_PESO}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        <input  type="text" class="columna" placeholder="Índice Masa Corporal" name="DES_IND_CORPORAL" value="{{DES_IND_CORPORAL}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        <input  type="text" class="columna" placeholder="Perímetro cintura" name="DES_CINTURA" value="{{DES_CINTURA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        <input  type="text" class="columna" placeholder="Perímetro Cadera" name="DES_CADERA" value="{{DES_CADERA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        <input  type="text" class="columna"  placeholder="Relación cintura/cadera" name="DES_CINTURA_CADERA" value="{{DES_CINTURA_CADERA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        
+        <h5>Datos Especificos</h5><br>
+        Ojos <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_OJOS" value="{{DES_OJOS}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Oídos <input   type="text" placeholder="Descripcion de Signo Vital" name="DES_OIDOS" value="{{DES_OIDOS}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Nariz <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_NARIZ" value="{{DES_NARIZ}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Boca <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_BOCA" value="{{DES_BOCA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Cuello <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_CUELLO" value="{{DES_CUELLO}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+
+        Tórax <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_TORAX" value="{{DES_TORAX}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Corazón <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_CORAZON" value="{{DES_CORAZON}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Pulmones <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_PULMONES" value="{{DES_PULMONES}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Abdomen <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_ABDOMEN" value="{{DES_ABDOMEN}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+
+        Genito-urinario <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_GENITO_URINARIO" value="{{DES_GENITO_URINARIO}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Miembros <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_MIEMBROS" value="{{DES_MIEMBROS}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Piel y faneras <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_PIEL_FANERAS" value="{{DES_PIEL_FANERAS}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input> 
+        Observaciones <input  type="text" placeholder="Descripcion de Signo Vital" name="OBSERVACIONES" value="{{OBSERVACIONES}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input> 
+
+        <button id="btnSummit" type="submit">Send</button>
+        <button id="btnCancel" ><a class="colorbtn" href="/consulta">Cancelar</a></button>
+
+      </form>
+    {{/each}}
+
+
+    {{!-- <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">No. Consulta</th>
+            <th class="m-2">No. Expediente</th>
+            <th class="m-2">Fecha de consulta</th>
+            <th class="m-2">Tipo de Consulta</th>
+            <th class="m-2">Clinica</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+            {{#each rows}}
+              <tr>
+                <td class="m-2">{{COD_CONSULTA}}</td>
+                <td class="m-2">{{COD_EXPEDIENTE}}</td>
+                <td class="m-2">{{COD_CLINICA}}</td>
+                
+                <td class="m-2">{{FEC_CONSULTA}}</td>
+                <td class="m-2 ">{{COD_TIP_CONSULTA}}</td>
+                <td id="actions">
+                  <form action="/consulta/delete" method="POST" class="mx-2">
+                    <input type="hidden" value="{{COD_CONSULTA}}" name="id">
+                    <button id="trash" type="submit"><i class="fas fa-trash"></i></button>
+                  </form>
+                </td>
+                {{!-- <td>
+                  <a href="/consulta/consulta_edit/{{COD_CONSULTA}}" >
+                    <button id="edit"><i class="fas fa-pen"></i></button></a>
+                </td> --}}
+                 {{!-- <td>
+                  <a href="/consulta/sig_vital_create/{{COD_CONSULTA}}">
+                    <button id="edit"><i class="fas fa-pen"></i></button></a>
+                </td>
+
+              </tr>
+            {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+
+  </div>
+</div>  --}}
+

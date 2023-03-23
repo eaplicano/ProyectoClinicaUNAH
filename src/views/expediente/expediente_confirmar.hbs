@@ -1,0 +1,39 @@
+<div>
+  <h2>Confirmación de Creación de Expediente</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form  action="" method="POST">
+
+      {{!-- <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-500 
+        p-2 my-2 focus:bg-white" placeholder="Task Id" name="Id"> --}}
+      {{!-- <h5>Expediente</h5>
+      <input type="hidden" placeholder="Código del Expediente" name="COD_EXPEDIENTE" value="{{COD_EXPEDIENTE}}"></input> --}}
+
+      <h5>Paciente</h5>
+      <input readonly class="columna" type="text" placeholder="Código de Paciente" name="COD_PACIENTE" value="{{COD_PACIENTE}}"></input>
+
+      <input readonly class="columna" type="number" placeholder="Número de Identidad" name="NUM_IDENTIDAD" value="{{NUM_IDENTIDAD}}"></input>
+
+      <input readonly class="columna" type="text" placeholder="Nombre del Paciente" name="NOM_PACIENTE" value="{{NOM_PACIENTE}}"></input>
+
+      <input readonly class="columna" type="text" placeholder="Apellidos del Paciente" name="APE_PACIENTE" value="{{APE_PACIENTE}}"></input>
+
+      <input readonly class="columna" type="date" placeholder="Fecha de Nacimiento" name="FEC_NACIMIENTO" value="{{FEC_NACIMIENTO}}"></input>
+
+      <input readonly class="columna" type="text" placeholder="Dirección de Domicilio" name="DIR_DOMICILIO" value="{{DIR_DOMICILIO}}"></input>
+
+      <input readonly class="columna" type="text" placeholder="Correo Electrónico" name="DIR_CORREO_ELECTRONICO" value="{{DIR_CORREO_ELECTRONICO}}"></input>
+
+      <input readonly class="columna" type="tel" pattern="[0-9]{8}" placeholder="Teléfono" name="NUM_TELEFONO" value="{{NUM_TELEFONO}}"></input>
+
+      <input readonly class="columna" type="text" placeholder="Genero" name="GENERO" value="{{GENERO}}"></input>
+
+      <input readonly class="columna" type="text" placeholder="Ocupación" name="OCUPACION" value="{{OCUPACION}}"></input> 
+      
+      <button id="btnSummit" type="submit" >Send</button>
+
+      <button id="btnCancel"><a href="/expediente_paciente">Cancelar</a></button>
+    </form>
+    {{/each}}
+  </div>
+</div>

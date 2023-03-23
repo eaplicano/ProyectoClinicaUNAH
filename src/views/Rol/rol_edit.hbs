@@ -1,0 +1,30 @@
+<<div>
+ 
+  <h2>Editar Rol</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form  action="" method="POST">
+ 
+    {{!-- Código de Paciente <input id="columna" type="text"  name="COD_PACIENTE"> --}}
+ 
+    Codigo Rol <input onlyread id="columna" required pattern="[0-9]" title="Solo permite números, minimo 8-máximo 13" type="text" placeholder="Codigo del Rol" name="COD_ROL" value="{{COD_ROL}}"></input>
+ 
+    Rol <input id="columna" required pattern="[a-zA-Z ]{3,50}" title="Solo se permiten letras" type="text" placeholder="Nombre del ROL" name="ROL" value="{{ROL}}"></input> 
+ 
+    Descripcion <input id="columna" required pattern="[a-zA-Z ]{5,50}" title="Solo se permiten letras" type="text" placeholder="Descripcion del rol" name="DES_ROL" value="{{DES_ROL}}"></input>
+      
+      <button id="btnSummit" onclick="myFunction()" type="submit" >Guardar</button>
+
+    <script>
+    function myFunction() {
+     alert("Rol Creado");
+    }
+    </script>
+ 
+    </form>
+    {{/each}}
+        <button id="btnCancel" ><a class="colorbtn" href="/Rol_Resumen">Cancelar</a></button>
+
+  </div>
+</div>  
+ 

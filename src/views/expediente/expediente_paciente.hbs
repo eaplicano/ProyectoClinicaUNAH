@@ -1,0 +1,45 @@
+<div>
+  <h2>Búsqueda de Pacientes</h2>
+  <div>
+    <div id="divNew">
+      <a href="/pacientes_create">Nuevo Paciente
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            
+            <th class="m-2">Id del Paciente</th>
+            <th class="m-2">Nombre del Paciente</th>
+            <th class="m-2">Apellido del Paciente</th>
+            <th class="m-2">Fecha de Nacimiento</th>
+            <th class="m-2">Seleccionar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+            {{#each tasks}}
+            <tr>
+              <td >{{COD_PACIENTE}}</td>
+              <td >{{NOM_PACIENTE}}</td>
+              <td >{{APE_PACIENTE}}</td>
+              <td >{{FEC_NACIMIENTO}}</td>
+             
+              <td id="actions">
+                {{!-- <form action="/expediente/expediente_confirmar" method="POST">
+                  <input type="hidden" value="{{COD_PACIENTE}}" name="id">
+                  <button id="trash" type="submit"><i class="fas fa-trash"></i></button>
+                </form> --}}
+
+                <a href="/expediente/expediente_confirmar/{{COD_PACIENTE}}" >
+                <button id="select"><i class="fas fa-check"></i></button></a>
+              </td>
+            </tr>
+            {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

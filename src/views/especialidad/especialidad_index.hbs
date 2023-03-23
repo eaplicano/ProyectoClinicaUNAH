@@ -1,0 +1,47 @@
+ 
+<div>
+  <h2>Detalle de Especialidad</h2>
+  <div>
+    <div id="divNew">
+      <a href="/especialidad_create">Nueva Especialidad
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Id de Especialidad</th>
+            <th class="m-2">Id de Personal</th>
+            <th class="m-2">Nombre</th>
+            <th class="m-2">Monto</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+          {{#each tasks}}
+          <tr>
+            <td class="m-2">{{COD_ESPECIALIDAD}}</td>
+            <td class="m-2">{{TIP_SIGNO_VITAL}}</td>
+            <td class="m-2 ">{{DES_SIGNO_VITAL}}</td>
+            
+              <form action="/especialidad/delete" method="POST" class="mx-2">
+                <input type="hidden" value="{{COD_ESPECIALIDAD}}" name="id">
+                <button id="trash" type="submit">
+                  <i class="fas fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <a href="/especialidad/especialidad_edit/{{COD_ESPECIALIDAD}}" >
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+            </td>
+          </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>
+

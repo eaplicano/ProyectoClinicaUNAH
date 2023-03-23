@@ -1,0 +1,20 @@
+
+<div>
+
+  <h2>Editar Antecedente</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      {{!-- <input type="number" placeholder="Codigo Antecedente" name="COD_ANTECEDENTE" value="{{COD_ANTECEDENTE}}" required pattern="[0-9]+"></input> --}} 
+
+      <input type="text" placeholder="Tipo de Antecedente" name="TIP_ANTECEDENTE" value="{{TIP_ANTECEDENTE}}"required pattern="[a-zA-Z]{5,50}" title="Solo se permite texto. Tamaño mínimo: 5. Tamaño máximo: 50"></input>
+
+      <input type="text" placeholder="Descripcion de Antecedente" name="DES_ANTECEDENTE" value="{{DES_ANTECEDENTE}}" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+
+      <button id="btnSummit" type="submit">Send</button>
+
+    </form>
+    {{/each}}
+  </div>
+</div> 

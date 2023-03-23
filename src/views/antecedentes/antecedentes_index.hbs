@@ -1,0 +1,92 @@
+
+<div>
+  <h2>Detalle de Antecedente</h2>
+  <div>
+    <div id="divNew">
+      <a href="/antecedentes_create">Nueva Antecedente
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Id de Antecedente</th>
+            <th class="m-2">Tipo de Antecedente</th>
+            <th class="m-2">Descripcion de Antecedente</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+          {{#each tasks}}
+          <tr>
+            <td class="m-2">{{COD_ANTECEDENTE}}</td>
+            <td class="m-2">{{TIP_ANTECEDENTE}}</td>
+            <td class="m-2 ">{{DES_ANTECEDENTE}}</td>
+
+            <td>
+
+              <form action="/antecedentes/delete" method="POST" class="mx-2">
+                <input type="hidden" value="{{COD_ANTECEDENTE}}" name="id">
+                <button id="trash" type="submit">
+                  <i class="fas fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <a href="/antecedentes/antecedentes_edit/{{COD_ANTECEDENTE}}" >
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+            </td>
+          </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>
+
+
+{{!-- 
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+  <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mt-12">
+    <div>
+    <td class="p-3 flex right">
+      <a href="/antecedentes_create" class="bg-blue-500 text-white px-3 py-1 rounded-sm">
+              <i class="fas fa-plus-circle"> Nuevo Antecedente </i></a>
+    </td>
+    </div> 
+    
+    <table class="table-fixed w-full">
+      <thead>
+        <tr class="bg-gray-500 text-white">
+          <th class="w-20 py-4 ...">ID</th>
+          <th class="w-1/2 py-4 ...">TIPO DE ANTECEDENTE</th>
+          <th class="w-1/2 py-4 ...">DESCRIPCION</th>
+          <th class="w-28 py-4 ...">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        {{#each tasks}}
+        <tr>
+          <td class="py-3 px-6">{{COD_ANTECEDENTE}}</td>
+          <td class="p-3 text-center">{{TIP_ANTECEDENTE}}</td>
+          <td class="p-3 text-center">{{DES_ANTECEDENTE}}</td>
+          <td class="p-3 flex">
+
+            <form action="/antecedentes/delete" method="POST" class="mx-2">
+              <input type="hidden" value="{{COD_ANTECEDENTE}}" name="id">
+              <button class="bg-red-500 text-white px-3 py-1 rounded-sm" type="submit">
+                <i class="fas fa-trash"></i></button>
+            </form>
+            
+            <a href="/antecedentes/antecedentes_edit/{{COD_ANTECEDENTE}}" class="bg-green-500 text-white px-3 py-1 rounded-sm">
+              <i class="fas fa-pen"></i></a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div> --}}

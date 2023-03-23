@@ -1,0 +1,27 @@
+
+<div>
+
+  <h2>Create Contacto de Emergencia</h2>
+  <div id="borde">
+    <form action="" method="POST">
+
+      <input type="number" placeholder="Codigo de Contacto de Emergencia" name="COD_CONTACTO" required pattern="[0-9]+"></input>
+
+      <input type="number" placeholder="Codigo del Paciente" name="COD_PACIENTE" required pattern="[0-9]+"></input>
+
+      <input type="text" placeholder="Nomrbe Completo" name="NOM_COMPLETO" required pattern="[a-zA-Z]{1,50}" title="Solo se permite texto. Tamaño máximo: 50" ></input>
+
+      <input type="text" placeholder="Direccion a Domicilio" name="DIR_DOMICILIO"  pattern="[A-Za-z0-9]+{5,255}" title="Tamaño máximo: 255"></input>
+
+      <input type="text" placeholder="Numero de Telefono" name="NUM_TELEFONO" required ></input>
+
+      <button id="btnSummit" type="submit">Send</button>
+            
+    </form>
+  </div>
+</div>
+
+
+
+
+ 

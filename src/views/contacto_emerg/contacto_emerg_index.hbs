@@ -1,0 +1,53 @@
+
+<div>
+  <h2>Detalle de Contacto de Emergencia</h2>
+  <div>
+    <div id="divNew">
+      <a href="/contacto_emerg_create">Nueva Consulta
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Id Contacto de Emergencia</th>
+            <th class="m-2">Id Paciente</th>
+            <th class="m-2">Nombre</th>
+            <th class="m-2">Direccion</th>
+            <th class="m-2">Numero</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+          {{#each tasks}}
+          <tr>
+            <td class="m-2">{{COD_CONTACTO}}</td>
+            <td class="m-2">{{COD_PACIENTE}}</td>
+            <td class="m-2 ">{{NOM_COMPLETO}}</td>
+            <td class="m-2 ">{{DIR_DOMICILIO}}</td>
+            <td class="m-2 ">{{NUM_TELEFONO}}</td>
+            
+            {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+            <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+            <td id="actions">
+              <form action="/contacto_emerg/delete" method="POST" class="mx-2">
+                <input type="hidden" value="{{COD_CONTACTO}}" name="id">
+                <button id="trash" type="submit">
+                  <i class="fas fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <a href="/contacto_emerg/contacto_emerg_edit/{{COD_CONTACTO}}" >
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+            </td>
+          </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>
+

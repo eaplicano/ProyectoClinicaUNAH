@@ -1,0 +1,25 @@
+<div>
+
+  <h2>Editar Proveedor</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      {{!-- <input type="text" placeholder="Task title" name="COD_INVENTARIO" value="{{COD_INVENTARIO}}"></input> --}}
+
+      <input type="text" placeholder="Nombre del Proveedor" name="NOM_PROVEEDOR">{{NOM_PROVEEDOR}}</input>
+
+      <input type="number" placeholder="Numero de RTN " name="NUM_RTN">{{NUM_RTN}}</input>
+
+      <input type="text" placeholder="Direccion del establecimiento " name="DIR_ESTABLECIMIENTO">{{DIR_ESTABLECIMIENTO}}</input>
+
+      <input type="number" placeholder="Numero de telefono " name="NUM_TELEFONO">{{NUM_TELEFONO}}</input>
+
+      <input type="text" placeholder="Correo Electronico " name="DIR_CORREO_ELECTR">{{DIR_CORREO_ELECTR}}</input>
+
+      <button id="btnSummit" type="submit">Aceptar</button>
+
+     </form>
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,195 @@
+const express = require('express');
+const pool = require('../database');
+
+async function index(req, res) {
+    await pool.query('SELECT COD_CONSULTA, COD_EXPEDIENTE, DATE_FORMAT(FEC_CONSULTA, "%d/%m/%Y") as FEC_CONSULTA ,GP_CLINICA.NOM_CLINICA, GP_TIP_CONSULTA.NOM_TIP_CONSULTA  FROM GP_CONSULTA INNER JOIN GP_CLINICA ON GP_CONSULTA.COD_CLINICA = GP_CLINICA.COD_CLINICA INNER JOIN GP_TIP_CONSULTA ON GP_CONSULTA.COD_TIP_CONSULTA = GP_TIP_CONSULTA.COD_TIP_CONSULTA;', (err, rows) => {
+      if(err) {
+        res.json(err);
+      }
+      res.render('consulta/index', {rows});        
+    });
+    
+}
+
+async function indexConsulta(req, res) {
+  const id = req.params.id;
+
+   // req.getConnection((err, conn) => {
+        //const id = req.params.id;
+        console.log(id);
+        await pool.query('SELECT * FROM GP_CONSULTA WHERE COD_EXPEDIENTE = ?', [id], (err, rows) => {
+        if(err) {
+          res.json(err);
+        }
+       res.render('consulta/consulta_edit', { rows });
+      });
+    
+}
+
+async function create(req, res) {
+    
+      const id = req.params.id;
+
+  // req.getConnection((err, conn) => {
+       //const id = req.params.id;
+       console.log(id);
+      await pool.query('SELECT * FROM GP_EXPEDIENTE WHERE COD_EXPEDIENTE = ?', [id], (err, tasks) => {
+       if(err) {
+         res.json(err);
+       }
+      });
+    res.render('consulta/consulta_create');
+    
+}
+
+
+async function store(req, res) {
+    const data = req.body;
+
+  //  req.getConnection((err, conn) => {
+    const { COD_SIG_VITALES,TIP_SIGNO_VITAL,DES_SIGNO_VITAL} = req.body;
+    const P_ins_sig_vitales = `call P_ins_sig_vitales(${COD_SIG_VITALES},'${TIP_SIGNO_VITAL}','${DES_SIGNO_VITAL}',CURDATE(), CURDATE(), 001,001)`;
+    
+    await pool.query(P_ins_sig_vitales, (err, rows) => {
+      if(err) {
+        res.json(err);
+      }
+      res.redirect('/consulta');
+      
+      }); 
+   // });
+}
+
+async function destroy(req, res) {
+    const id = req.body.id;
+    const data = req.body;
+  
+    //req.getConnection((err, conn) => {
+      const P_DLT_SIG_VITALES = `call P_DLT_SIG_VITALES(${id})`;
+      await pool.query(P_DLT_SIG_VITALES, [data, id],(err, rows) => {
+        if(err) {
+          res.json(err);
+        }
+        res.redirect('/consulta');
+        console.log(req.body);
+        console.log(rows);
+        console.log(data);
+      });
+    //})
+  }
+
+
+  async function edit(req, res) {
+    const id = req.params.id;
+
+   // req.getConnection((err, conn) => {
+        //const id = req.params.id;
+        //console.log(id);
+        await pool.query('SELECT * FROM GP_SIG_VITALES WHERE COD_SIG_VITALES = ?', [id], (err, tasks) => {
+        if(err) {
+          res.json(err);
+        }
+       res.render('consulta/consulta_edit', { tasks });
+      });
+   // });
+  }
+  
+  async function update(req, res) {
+    const id = req.params.id;
+    const data = req.body;
+  
+   // req.getConnection((err, conn) => {
+    const { COD_SIG_VITALES,TIP_SIGNO_VITAL,DES_SIGNO_VITAL} = req.body;
+    const P_UPD_SIG_VITALES = `call P_UPD_SIG_VITALES(${COD_SIG_VITALES},'${TIP_SIGNO_VITAL}','${DES_SIGNO_VITAL}',CURDATE(), 001)`;
+      await pool.query(P_UPD_SIG_VITALES, [data, id],(err, rows) => {
+        if(err) {
+          res.json(err);
+        }
+        res.redirect('/consulta');
+      });
+    //});
+  }
+  async function createSigVital(req, res) {
+    const id = req.params.id;
+      console.log(id);
+      await pool.query('SELECT * FROM GP_CONSULTA WHERE COD_CONSULTA = ?', [id], (err, tasks) => {
+          if(err) {
+            res.json(err);
+          }
+          // console.log(tasks);
+          res.render('consulta/sig_vital_create', { tasks });
+        });
+  }
+
+  async function storeSigVital(req, res) {
+    const data = req.body;
+  
+    // req.getConnection((err, conn) => {
+    const { COD_CONSULTA, DES_PRE_ARTERIAL,DES_FRE_CARDIACA,DES_FRE_RESPIRATORIA,DES_PULSO,DES_TEMPERATURA,DES_SAT_OXIGENO,
+      DES_TALLA, DES_PESO,DES_IND_CORPORAL,DES_CINTURA,DES_CADERA,DES_CINTURA_CADERA,DES_OJOS,DES_OIDOS,DES_NARIZ,DES_BOCA,DES_CUELLO,DES_TORAX,
+      DES_CORAZON, DES_PULMONES,DES_ABDOMEN,DES_GENITO_URINARIO,DES_MIEMBROS,DES_PIEL_FANERAS,OBSERVACIONES} = req.body;
+    const INS_GP_PRECLINICA = `call INS_GP_PRECLINICA(${COD_CONSULTA},'${DES_PRE_ARTERIAL}','${DES_FRE_CARDIACA}', '${DES_FRE_RESPIRATORIA}','${DES_PULSO}','${DES_TEMPERATURA}','${DES_SAT_OXIGENO}','${DES_TALLA}','${DES_PESO}','${DES_IND_CORPORAL}','${DES_CINTURA}','${DES_CADERA}','${DES_CINTURA_CADERA}','${DES_OJOS}','${DES_OIDOS}','${DES_NARIZ}','${DES_BOCA}','${DES_CUELLO}','${DES_TORAX}','${DES_CORAZON}','${DES_PULMONES}','${DES_ABDOMEN}','${DES_GENITO_URINARIO}','${DES_MIEMBROS}','${DES_PIEL_FANERAS}','${OBSERVACIONES}',001,001)`;    
+    // console.log(INS_GP_PRECLINICA);
+    await pool.query(INS_GP_PRECLINICA, (err, rows) => {
+        if(err) {
+          res.json(err);
+        }
+        // console.log(INS_GP_PRECLINICA);
+        // pool.query('SELECT * FROM GP_CONSULTA WHERE COD_CONSULTA = ?', [id], (err, rows) => {
+        //   if(err) {
+        //     res.json(err);
+        //   }
+        res.redirect('/consulta');
+        // });
+      });
+    // });
+  }
+
+  async function createDiagnostico(req, res) {
+    const id = req.params.id;
+      console.log(id);
+      await pool.query('SELECT * FROM GP_CONSULTA WHERE COD_CONSULTA = ?', [id], (err, tasks) => {
+          if(err) {
+            res.json(err);
+          }
+          // console.log(tasks);
+          res.render('consulta/diagnostico_create', { tasks });
+        });
+  }
+
+  async function storeDiagnostico(req, res) {
+    const data = req.body;
+  
+    // req.getConnection((err, conn) => {
+    const { COD_CONSULTA, DES_DIAGNOSTICO_GEN,DES_ETARIO,DES_VACUNAL,DES_PATOLOGICO,DES_NUTRICIONAL,DES_DESARROLLO,DES_PLAN} = req.body;
+    const INS_GP_DIAGNOSTICO = `call INS_GP_DIAGNOSTICO(${COD_CONSULTA},'${DES_DIAGNOSTICO_GEN}','${DES_ETARIO}','${DES_VACUNAL}','${DES_PATOLOGICO}','${DES_NUTRICIONAL}','${DES_DESARROLLO}','${DES_PLAN}',001,001)`;    
+    // console.log(INS_GP_DIAGNOSTICO);
+    await pool.query(INS_GP_DIAGNOSTICO, (err, rows) => {
+        if(err) {
+          res.json(err);
+        }
+        // console.log(INS_GP_DIAGNOSTICO);
+        // pool.query('SELECT * FROM GP_CONSULTA WHERE COD_CONSULTA = ?', [id], (err, rows) => {
+        //   if(err) {
+        //     res.json(err);
+        //   }
+        res.redirect('/consulta');
+        // });
+      });
+    // });
+  }
+ 
+
+module.exports = {
+    index: index,
+    create: create,
+    store: store,
+    destroy: destroy,
+    edit: edit,
+    update: update,
+    indexConsulta: indexConsulta,
+    createSigVital: createSigVital,
+    storeSigVital: storeSigVital,
+    createDiagnostico: createDiagnostico,
+    storeDiagnostico: storeDiagnostico,
+}

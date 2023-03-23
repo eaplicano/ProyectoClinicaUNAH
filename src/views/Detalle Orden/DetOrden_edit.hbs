@@ -1,0 +1,25 @@
+<div>
+
+  <h2>Editar Detalle Orden</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      {{!-- <input type="text" placeholder="Task title" name="COD_INVENTARIO" value="{{COD_INVENTARIO}}"></input> --}}
+
+      <input type="text" placeholder="Fecha Ingreso" name="COD_ORDEN_COMPRA">{{COD_ORDEN_COMPRA}}</input>
+      
+      <input type="text" placeholder="Nombre Articulo" name="COD_ARTICULO">{{COD_ARTICULO}}</input>
+
+      <input type="number" placeholder="Cantidad" name="CAN_ARTICULO">{{CAN_ARTICULO}}</input>
+
+      <input type="number" placeholder="Monto" name="MON_ARTICULO">{{MON_ARTICULO}}</input>
+
+      <input type="date" placeholder="Fecha de vencimiento" name="FEC_VENCIMIENTO">{{FEC_VENCIMIENTO}}</input>
+      
+      <button id="btnSummit" type="submit">Aceptar</button>
+
+     </form>
+    {{/each}}
+  </div>
+</div>

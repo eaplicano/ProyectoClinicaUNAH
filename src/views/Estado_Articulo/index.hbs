@@ -1,0 +1,44 @@
+<div>
+  <h2>Estado Articulo</h2>
+    <div>
+    <div id="divNew">
+      <a href="/EstA_create">Nuevo Estado Articulo
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div> 
+    <div id="tabla">
+      <table>
+        <thead>
+         <tr>
+          <th class="w-20 py-4 ...">Id del Estado Articulo</th>
+          <th class="w-1/2 py-4 ...">Nombre del Estado Articulo</th>
+          <th class="w-28 py-4 ...">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="row">
+        {{#each tasks}}
+        <tr>
+          <td class="py-3 px-6">{{COD_EST_ARTICULO}}</td>
+          <td class="py-3 px-6">{{NOM_EST_ARTICULO}}</td>
+                 
+          {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+          <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+          <td id="actions">
+            <form action="/Estado_Articulo/delete" method="POST" class="mx-2">
+              <input type="hidden" value="{{COD_EST_ARTICULO}}" name="id">
+              <button id="trash" type="submit">
+                <i class="fas fa-trash"></i></button>
+            </form>
+          </td>
+          <td> 
+            <a href="/Estado_Articulo/EstA_edit/{{COD_EST_ARTICULO}}" >
+              <button id="edit"><i class="fas fa-pen"></i></button></a>
+          </td>
+         </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

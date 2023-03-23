@@ -1,0 +1,53 @@
+<<div>
+ 
+  <h2>Editar Permiso</h2>
+  <div id="borde">
+    <form  action="" method="POST">
+ 
+    {{!-- Código de Paciente <input id="columna" type="text"  name="COD_PACIENTE"> --}}
+ 
+    Rol     <select name="ROL" id="ROL">
+              <option value="1">Administrador</option>
+              <option value="2">Usuario</option>
+    </select>
+ 
+    Descripcion <input id="columna" required pattern="[a-zA-Z ]{5,255}" title="Solo se permiten letras" type="text" placeholder="Descripcion del Rol" name="DES_ROL">
+
+    Privilegios
+    <input name="activo" type="checkbox" id="activo" />Activo
+    <input name="insertar" type="checkbox" id="insertar" />Insertar
+    <input name="modificar" type="checkbox" id="modificar" />Modificar
+    <input name="eliminar" type="checkbox" id="eliminar" />Eliminar
+    <input name="visualizar" type="checkbox" id="visualizar" />Visualizar
+ 
+   
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Pantalla</th>
+            <th class="m-2">Estado</th>
+          </tr>
+        </thead>
+
+     <td>
+        {{!<button id="Estado"><i class="fas fa-pen"></i></button></a>--}}
+        <input type="checkbox" id="Estado" name="Estado" value="1">
+      </td> 
+
+
+
+     <button id="btnSummit" onclick="myFunction()" type="submit" >Guardar</button>
+    <script>
+    function myFunction() {
+     alert("Rol Registrado");
+    }
+    </script>
+ 
+    </form>
+
+        <button id="btnCancel" ><a class="colorbtn" href="/Permiso_Gestion">Cancelar</a></button>
+
+  </div>
+</div>  
+ 

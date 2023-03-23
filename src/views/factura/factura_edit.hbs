@@ -1,0 +1,29 @@
+<div>
+
+  <h2>Editar Articulo {{user.USUARIO}}</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      <input type="text" placeholder="Task title" name="COD_FACTURA" value="{{COD_FACTURA}}"></input>
+
+      <input type="text" placeholder="Task description" name="FEC_FACTURACION" value="{{FEC_FACTURACION}}"></input>
+
+      <input type="text" placeholder="Task description" name="COD_PACIENTE" value="{{COD_PACIENTE}}"></input>
+
+      <input type="text" placeholder="Task description" name="MON_ISV" value="{{MON_ISV}}"></input>
+
+      <button id="btnSummit" type="submit" >Send</button>
+      
+    {{!-- <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-500 
+      p-2 my-2 focus:bg-white" placeholder="Task Detalle" name="Detalle"> --}}
+{{!-- 
+    <input type="number" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-500 
+      p-2 my-2 focus:bg-white" placeholder="Task Monto" name="Monto">
+
+    <input type="date" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-500 
+      p-2 my-2 focus:bg-white" placeholder="Task Fecha" name="Fecha"> --}}
+    </form>
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,24 @@
+
+<div>
+
+  <h2>Editar Clinica</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      {{!-- <input type="number" placeholder="Codigo Clinica" name="COD_CLINICA" value="{{COD_CLINICA}}"  required pattern="[0-9]+"></input> --}}
+
+      <input type="text" placeholder="Nombre de la Clinica" name="NOM_CLINICA" value="{{NOM_CLINICA}}" required pattern="[A-Za-z0-9]{5,50}" title="Tamaño mínimo: 5. Tamaño máximo: 50"></input>
+
+      <input type="text" placeholder="Direccion de la Clinica" name="DIR_CLINICA" value="{{DIR_CLINICA}}" required pattern="^[A-Za-z ][A-Za-z0-9!@#$%^&* ]*$" title=" Tamaño mínimo: 5, Tamaño máximo: 255"></input>
+
+      <input type="number" placeholder="Numero de la Clinica" name="NUM_TELEFONO" value="{{NUM_TELEFONO}}" required pattern="[0-9]+"></input>
+
+      <input type="text" placeholder="Direccion de la Clinica" name="DIR_CORREO_ELECTR" value="{{DIR_CORREO_ELECTR}}"></input>
+
+      <button id="btnSummit" type="submit">Send</button>
+
+    </form>
+    {{/each}}
+  </div>
+</div> 

@@ -1,0 +1,33 @@
+<div>
+
+  <h2>Editar Inventario</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      {{!-- <input type="text" placeholder="Task title" name="COD_INVENTARIO" value="{{COD_INVENTARIO}}"></input> --}}
+
+      <input type="text" placeholder="Nombre Articulo" name="COD_ARTICULO">{{COD_ARTICULO}}</input>
+      
+      <input type="number" placeholder="Numero de Documento" name="DOC_OPERACION">{{DOC_OPERACION}}</input>
+
+      <input type="text" placeholder="Estado del Articulo" name="COD_EST_ARTICULO">{{COD_EST_ARTICULO}}</input>
+
+      <input type="date" placeholder="Fecha de Ingreso" name="FEC_INGRESO">{{FEC_INGRESO}}</input>
+
+      <input type="number" placeholder="Cantidad de Articulos" name="CAN_ARTICULO">{{CAN_ARTICULO}}</input>
+
+      <input type="date" placeholder="Fecha de vencimiento" name="FEC_VENCIMIENTO">{{FEC_VENCIMIENTO}}</input>
+      
+      <input type="number" placeholder="Cantidad Maxima" name="CAN_MAXIMA">{{CAN_MAXIMA}}</input>
+
+      <input type="number" placeholder="Cantidad Minima" name="CAN_MINIMA">{{CAN_MINIMA}}</input>
+
+      <input type="text" placeholder="Nombre Clinica" name="COD_CLINICA">{{COD_CLINICA}}</input>
+
+      <button id="btnSummit" type="submit">Aceptar</button>
+
+     </form>
+    {{/each}}
+  </div>
+</div>

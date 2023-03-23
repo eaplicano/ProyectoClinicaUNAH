@@ -1,0 +1,60 @@
+<div>
+  <h2>Inventario</h2>
+    <div>
+    <div id="divNew">
+      <a href="/inventario_create">Nuevo inventario 
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div> 
+    <div id="tabla">
+      <table>
+        <thead>
+         <tr>
+          <th class="w-20 py-4 ...">Id del inventario</th>
+          <th class="w-1/2 py-4 ...">Id del articulo</th>
+          <th class="w-1/4 py-4 ...">Documento Operacion</th>
+          <th class="w-28 py-4 ...">Id estado del articulo</th>
+          <th class="w-1/2 py-4 ...">Fecha de Ingreso</th>
+          <th class="w-28 py-4 ...">Cantidad de Articulo</th>
+          <th class="w-28 py-4 ...">Fecha de Vencimiento</th>
+          <th class="w-28 py-4 ...">Cantidad Maxima</th>
+          <th class="w-28 py-4 ...">Cantidad Minima</th>
+          <th class="w-28 py-4 ...">Id Clinica</th>
+          <th class="w-28 py-4 ...">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="row">
+        {{#each tasks}}
+        <tr>
+          <td class="py-3 px-6">{{COD_INVENTARIO}}</td>
+          <td class="py-3 px-6">{{COD_ARTICULO}}</td>
+          <td class="p-3 text-center">{{DOC_OPERACION}}</td>
+          <td class="py-3 px-6">{{COD_EST_ARTICULO}}</td>
+          <td class="p-3">{{FEC_INGRESO}}</td>
+          <td class="p-3 text-center">{{CAN_ARTICULO}}</td>
+          <td class="p-3">{{FEC_VENCIMIENTO}}</td>
+          <td class="p-3 text-center">{{CAN_MAXIMA}}</td>
+          <td class="p-3 text-center">{{CAN_MINIMA}}</td>
+          <td class="py-3 px-6">{{COD_CLINICA}}</td>
+          
+          {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+          <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+          <td id="actions">
+            <form action="/Inventario/delete" method="POST" class="mx-2">
+              <input type="hidden" value="{{COD_INVENTARIO}}" name="id">
+              <button id="trash" type="submit">
+                <i class="fas fa-trash"></i></button>
+            </form>
+          </td>
+          <td> 
+            <a href="/Inventario/inventario_edit/{{COD_INVENTARIO}}" >
+              <button id="edit"><i class="fas fa-pen"></i></button></a>
+          </td>
+         </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

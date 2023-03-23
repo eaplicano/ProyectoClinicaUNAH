@@ -1,0 +1,21 @@
+<div>
+
+  <h2>Editar Servicio</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      {{!-- <input type="text" placeholder="Task title" name="COD_INVENTARIO" value="{{COD_INVENTARIO}}"></input> --}}
+
+      <input type="text" placeholder="Nombre Tipo Servicio" name="COD_TIP_SERVICIO">{{COD_TIP_SERVICIO}}</input>
+
+      <input type="text" placeholder="Nombre del Servicio " name="NOM_SERVICIO">{{NOM_SERVICIO}}</input>
+
+      <input type="number" placeholder="Monto del Servicio " name="MON_SERVICIO">{{MON_SERVICIO}}</input>
+     
+      <button id="btnSummit" type="submit">Aceptar</button>
+
+     </form>
+    {{/each}}
+  </div>
+</div>

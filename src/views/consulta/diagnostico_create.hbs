@@ -1,0 +1,23 @@
+<div>
+  <h2>Diagnostico</h2>
+  <div id="borde">
+    {{#each tasks}}
+      <form action="" method="POST">
+        Código de Consulta<input type="number" placeholder="Codigo Signos Vitales" name="COD_CONSULTA" value="{{COD_CONSULTA}}" required pattern="[0-9]+"></input> 
+        {{!-- Código de Preclinica<input type="number" placeholder="Codigo Signos Vitales" name="COD_PRECLINICA" value="{{COD_PRECLINICA}}" required pattern="[0-9]+"></input>  --}}
+
+        <h5>Signos Vitales</h5><br>
+        Diagnostico General <input class="textarea" type="text" placeholder="Diagnostico General" name="DES_DIAGNOSTICO_GEN" value="{{DES_DIAGNOSTICO_GEN}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Etario<input class="textarea" type="text" placeholder="Etario" name="DES_ETARIO" value="{{DES_ETARIO}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Vacunal <input class="textarea" type="text" placeholder="Vacunal" name="DES_VACUNAL" value="{{DES_VACUNAL}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Patológico <input class="textarea" type="text" placeholder="Patológico" name="DES_PATOLOGICO" value="{{DES_PATOLOGICO}}"  pattern="[A-Za-z 0-9 /]+{5,250}" title="Tamaño máximo: 250"></input>
+        Nutricional <input class="textarea" type="text" placeholder="Nutricional" name="DES_NUTRICIONAL" value="{{DES_NUTRICIONAL}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Desarrollo<input class="textarea" type="text" placeholder="Desarrollo" name="DES_DESARROLLO" value="{{DES_DESARROLLO}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        Plan <input class="textarea" type="text" placeholder="Plan" name="DES_PLAN" value="{{DES_PLAN}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+
+        <button id="btnSummit" type="submit">Send</button>
+        <button id="btnCancel" ><a class="colorbtn" href="/consulta">Cancelar</a></button>
+
+      </form>
+    {{/each}}
+

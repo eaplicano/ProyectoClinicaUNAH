@@ -1,0 +1,21 @@
+<div>
+
+  <h2>Editar Operacion</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      {{!-- <input type="text" placeholder="Task title" name="COD_INVENTARIO" value="{{COD_INVENTARIO}}"></input> --}}
+
+      <input type="text" placeholder="Documento de operacion " name="DOC_OPERACION">{{DOC_OPERACION}}</input>
+
+      <input type="text" placeholder="Tipo de Operacion " name="TIP_OPERACION">{{TIP_OPERACION}}</input>
+
+      <input type="number" placeholder="Cantidad de Operaciones " name="CAN_OPERACION">{{CAN_OPERACION}}</input>
+     
+      <button id="btnSummit" type="submit">Aceptar</button>
+
+     </form>
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div>
+  <h2>Inventario</h2>
+    <div>
+    <div id="divNew">
+      <a href="/DetOrden_create">Nuevo Detalle 
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div> 
+    <div id="tabla">
+      <table>
+        <thead>
+         <tr>
+          <th class="w-20 py-4 ...">Id del detalle orden</th>
+          <th class="w-1/2 py-4 ...">Id de la orden compra</th>
+          <th class="w-1/4 py-4 ...">Id del articulo</th>
+          <th class="w-28 py-4 ...">Cantidad de articulos</th>
+          <th class="w-28 py-4 ...">Fecha de Vencimiento</th>
+          <th class="w-28 py-4 ...">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="row">
+        {{#each tasks}}
+        <tr>
+          <td class="py-3 px-6">{{COD_DETALLE_ORDEN}}</td>
+          <td class="py-3 px-6">{{COD_ORDEN_COMPRA}}</td>
+          <td class="p-3 text-center">{{COD_ARTICULO}}</td>
+          <td class="py-3 px-6">{{CAN_ARTICULO}}</td>
+          <td class="p-3">{{MON_ARTICULO}}</td>
+          <td class="p-3">{{FEC_VENCIMIENTO}}</td>
+         
+          {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+          <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+          <td id="actions">
+            <form action="/Detalle_Orden/delete" method="POST" class="mx-2">
+              <input type="hidden" value="{{COD_DETALLE_ORDEN}}" name="id">
+              <button id="trash" type="submit">
+                <i class="fas fa-trash"></i></button>
+            </form>
+          </td>
+          <td> 
+            <a href="/Detalle_Orden/DetOrden_edit/{{COD_DETALLE_ORDEN}}" >
+              <button id="edit"><i class="fas fa-pen"></i></button></a>
+          </td>
+         </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div>
+  <h2>Detalle de Usuarios</h2>
+  <div>
+    <div id="divNew">
+      <a href="/signup">Nuevo Usuario
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Id del Usuario</th>
+            <th class="m-2">Nombre de Usuario</th>
+            <th class="m-2">Nombre Completo</th>
+            <th class="m-2">Estado del Usuario</th>
+            <th class="m-2">Rol</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+          {{#each tasks}}
+          <tr>
+            <td class="m-2">{{COD_USUARIO}}</td>
+            <td class="m-2">{{USUARIO}}</td>
+            <td class="m-2 ">{{NOM_USUARIO}}</td>
+            <td class="m-2">{{EST_USUARIO}}</td>
+            <td class="m-2">{{COD_ROL}}</td>
+            
+            {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+            <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+            <td id="actions">
+              <form action="/auth/delete" method="POST" class="mx-2">
+                <input type="hidden" value="{{COD_USUARIO}}" name="id">
+                <button id="trash" type="submit">
+                  <i class="fas fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <a href="/auth/singup_edit/{{COD_USUARIO}}" >
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+            </td>
+          </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>

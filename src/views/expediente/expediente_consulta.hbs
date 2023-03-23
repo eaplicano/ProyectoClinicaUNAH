@@ -1,0 +1,20 @@
+<div>
+
+  <h2>Nueva Consulta</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form  action="" method="POST">
+      Expediente <input readonly placeholder="Código del Expediente" name="COD_EXPEDIENTE" value="{{COD_EXPEDIENTE}}"></input>
+
+      Fecha de la Consulta<input type="date" placeholder="Fecha de la Consulta" name="FEC_CONSULTA" value="{{FEC_CONSULTA}}"></input>
+
+      Tipo de Consulta <input type="text" placeholder="Urgencia, Normal" name="TIP_CONSULTA" value="{{TIP_CONSULTA}}">
+
+      Clinica <input type="number" placeholder="Clinica se Atendie el Paciente" name="COD_CLINICA" value="{{COD_CLINICA}}"></input>
+
+      <button id="btnSummit" type="submit" >Guardar</button>
+      <button id="btnCancel" ><a class="colorbtn" href="/expediente">Cancelar</a></button>
+    </form>
+    {{/each}}
+  </div>
+</div>

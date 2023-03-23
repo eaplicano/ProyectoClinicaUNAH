@@ -1,0 +1,32 @@
+<div>
+
+  <h2>Nuevo Paciente</h2>
+  <div id="borde">
+    <form  action="" method="POST">
+
+    {{!-- Código de Paciente <input id="columna" type="text"  name="COD_PACIENTE"> --}}
+
+    Identificación <input id="columna" required pattern="[0-9]{8,13}" title="Solo permite números, minimo 8-máximo 13" type="text" placeholder="Número de Identidad o Pasaporte" name="NUM_IDENTIDAD"></input>
+
+    Nombres <input id="columna" required pattern="[a-zA-Z ]{5,50}" title="Solo se permiten letras" type="text" placeholder="Primer y Segundo Nombre" name="NOM_PACIENTE">
+
+    Apellidos <input id="columna" required pattern="[a-zA-Z ]{5,50}" title="Solo se permiten letras" type="text" placeholder="Primer y Segundo Apellido" name="APE_PACIENTE"></input>
+
+    Fecha de Nacimiento <input id="columna" required type="date" placeholder="Fecha de Nacimiento" name="FEC_NACIMIENTO">
+
+    Dirección de Domicilio <input id="columna" required pattern="[A-Za-z 0-9 ]{5,250}" title="Solo se permiten letras" type="text" placeholder="Dirección Completa" name="DIR_DOMICILIO"></input>
+
+    Correo del Paciente <input id="columna" type="email" placeholder="Correo Electrónico" name="DIR_CORREO_ELECTRONICO">
+
+    Teléfono del Paciente <input id="columna" type="tel" pattern="[0-9]{8,8}" placeholder="Teléfono" name="NUM_TELEFONO"></input>
+
+    Genero del Paciente <input id="columna" required pattern="[a-zA-Z ]{1,1}" title="Solo se permiten letras" type="text" placeholder="F o M" name="GENERO">
+
+    Ocupación del Paciente <input id="columna" required pattern="[a-zA-Z ]{5,50}" title="Solo se permiten letras" type="text" placeholder="Ocupación" name="OCUPACION"></input> 
+    
+
+    <button id="btnSummit" type="submit" >Guardar</button>
+
+    </form>
+  </div>
+</div>  

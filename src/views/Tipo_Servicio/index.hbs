@@ -1,0 +1,45 @@
+<div>
+  <h2>Tipo Servicio</h2>
+    <div>
+    <div id="divNew">
+      <a href="/TipServicio_create">Nuevo Tipo Servicio
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div> 
+    <div id="tabla">
+      <table>
+        <thead>
+         <tr>
+          <th class="w-20 py-4 ...">Id del Tipo Servicio</th>
+          <th class="w-1/2 py-4 ...">Nombre del Tipo Servicio</th>
+          <th class="m-2">Eliminar</th>
+          <th class="m-2">Modificar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="row">
+        {{#each tasks}}
+        <tr>
+          <td class="py-3 px-6">{{COD_TIP_SERVICIO}}</td>
+          <td class="py-3 px-6">{{NOM_TIP_SERVICIO}}</td>
+                 
+          {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+          <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+          <td id="actions">
+            <form action="/Tipo_Servicio/delete" method="POST" class="mx-2">
+              <input type="hidden" value="{{COD_TIP_SERVICIO}}" name="id">
+              <button id="trash" type="submit">
+                <i class="fas fa-trash"></i></button>
+            </form>
+          </td>
+          <td> 
+            <a href="/Tipo_Servicio/TipServicio_edit/{{COD_TIP_SERVICIO}}" >
+              <button id="edit"><i class="fas fa-pen"></i></button></a>
+          </td>
+         </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

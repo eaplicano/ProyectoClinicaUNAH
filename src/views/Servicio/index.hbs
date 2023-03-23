@@ -1,0 +1,49 @@
+<div>
+  <h2>Detalle de Servicios</h2>
+    <div>
+    <div id="divNew">
+      <a href="/servicio_create">Nueva Operacion
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div> 
+    <div id="tabla">
+      <table>
+        <thead>
+         <tr>
+          <th class="m-2">Id de la Operacion</th>
+          <th class="m-2">Documento de la Operacion</th>
+          <th class="m-2">Tipo de Operacion</th>
+          <th class="m-2">Cantidad de Operaciones</th>
+          <th class="m-2">Eliminar</th>
+          <th class="m-2">Modificar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="row">
+        {{#each tasks}}
+        <tr>
+          <td class="m-2">{{COD_OPERACION}}</td>
+          <td class="m-2">{{DOC_OPERACION}}</td>
+          <td class="m-2">{{TIP_OPERACION}}</td>
+          <td class="m-2">{{CAN_OPERACION}}</td>
+                 
+          {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+          <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+          <td id="actions">
+            <form action="/Operacion/delete" method="POST" class="mx-2">
+              <input type="hidden" value="{{COD_OPERACION}}" name="id">
+              <button id="trash" type="submit">
+                <i class="fas fa-trash"></i></button>
+            </form>
+          </td>
+          <td> 
+            <a href="/Operacion/operacion_edit/{{COD_OPERACION}}" >
+              <button id="edit"><i class="fas fa-pen"></i></button></a>
+          </td>
+         </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

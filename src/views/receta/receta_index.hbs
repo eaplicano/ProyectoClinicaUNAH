@@ -1,0 +1,43 @@
+
+<div>
+  <h2>Detalle de Receta</h2>
+  <div>
+    <div id="divNew">
+      <a href="/receta_create">Nueva Consulta
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Id de Receta</th>
+            <th class="m-2">Detalle de Receta</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+          {{#each tasks}}
+          <tr>
+            <td class="m-2">{{COD_RECETA}}</td>
+            <td class="m-2 ">{{DET_RECETA}}</td>
+            
+              <form action="/receta/delete" method="POST" class="mx-2">
+                <input type="hidden" value="{{COD_RECETA}}" name="id">
+                <button id="trash" type="submit">
+                  <i class="fas fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <a href="/receta/receta_edit/{{COD_RECETA}}" >
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+            </td>
+          </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>

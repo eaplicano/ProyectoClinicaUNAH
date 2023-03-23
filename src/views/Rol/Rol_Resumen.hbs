@@ -1,0 +1,55 @@
+<div>
+  <h2>Detalle Rol</h2>
+  <div>
+    <div id="divNew">
+      <a href="/Rol/Rol">Nuevo Rol
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Codigo del Rol</th>
+            <th class="m-2">Rol</th>
+            <th class="m-2">Descripcion</th>
+            <th class="m-2">Modificar</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Permisos</th>
+            {{!-- <th class="m-2">Modificar</th> --}}
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+            {{#each tasks}}
+            <tr>
+              <td>{{COD_ROL}}</td>
+              <td>{{ROL}}</td>
+              <td>{{DES_ROL}}</td>
+              
+
+              
+              {{!-- <td type="date" class="m-2">{{FEC_MODIFICACION}}</td> --}}
+            
+              <td id="actions">
+                  <form action="/Rol/delete" method="POST" class="mx-2">
+                    <input type="hidden" value="{{COD_ROL}}" name="id">
+                    <button id="trash" type="submit"><i class="fas fa-trash"></i></button>
+                  </form>
+                </td>
+                <td>
+                  <a href="/Rol/Rol_edit/{{COD_ROL}}">
+                  <button id="edit"><i class="fas fa-pen"></i></button></a>
+                </td> 
+                <td id="actions">
+                  <a href="/Rol/Permiso_create/{{COD_ROL}}">
+                  <button id="select"><i class="fas fa-check"></i></button></a>
+                </td>
+              </td>
+            </tr>
+            {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>

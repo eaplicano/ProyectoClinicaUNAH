@@ -1,0 +1,43 @@
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+  <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mt-12">
+    <div>
+    <td class="p-3 flex right">
+      <a href="/usr_create" class="bg-blue-500 text-white px-3 py-1 rounded-sm">
+              <i class="fas fa-plus-circle"> Nuevo Usuario </i></a>
+    </td>
+    </div> 
+    <table class="table-fixed w-full">
+      <thead>
+        <tr class="bg-gray-500 text-white">
+          <th class="w-20 py-4 ...">Id del Usuario</th>
+          <th class="w-1/2 py-4 ...">Usuario</th>
+          <th class="w-1/2 py-4 ...">Nombre del Personal</th>
+          <th class="w-1/4 py-4 ...">Password</th>
+          <th class="w-28 py-4 ...">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each tasks}}
+        <tr>
+          <td class="py-3 px-6">{{COD_USUARIO}}</td>
+          <td class="p-3 text-center">{{USUARIO}}</td>
+          <td class="p-3 text-center">{{NOM_USUARIO}}</td>
+          <td class="p-3">{{CONTRASEÑA}}</td>
+          
+          {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+          <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+          <td class="p-3 flex">
+            <form action="Usuarios/delete" method="POST" class="mx-2">
+              <input type="hidden" value="{{COD_USUARIO}}" name="id">
+              <button class="bg-red-500 text-white px-3 py-1 rounded-sm" type="submit">
+                <i class="fas fa-trash"></i></button>
+            </form>
+            <a href="Usuarios/usuario_edit/{{COD_USUARIO}}" class="bg-green-500 text-white px-3 py-1 rounded-sm">
+              <i class="fas fa-pen"></i></a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

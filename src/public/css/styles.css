@@ -1,0 +1,190 @@
+body {
+    background: #f5f6fa;
+  font-family: 'Oswald', sans-serif;
+
+    /* overflow: hidden; */
+}
+
+.index {
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar {
+    background: black !important;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.masthead {
+    color: black;
+    min-height: 30rem;
+    width: 100%;
+    height: 100%;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: url('/img/background.jpg');
+    opacity: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.masthead h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media (min-width: 992px) {
+    .masthead {
+      height: 100vh;
+    }
+    .masthead h1 {
+      font-size: 5.5rem;
+    }
+  }
+
+  #tabla {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  table {
+    width: 100%;
+    text-align: center;
+  }
+  th {
+    background-color: #1b43c6;
+    color: white;
+  }
+  tr:nth-child(even) {background-color: #f2f2f2;}
+
+  h2{
+    text-align: center;
+    padding-top: 5px;
+  }
+
+  #divNew{
+    text-align: right;
+    padding-right: 5%;
+    padding-bottom: 3px;
+   
+  }
+
+  a{
+    color: #000;
+    font-weight: bold;
+  }
+  input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .textarea{
+    height: 100px;
+  }
+
+  .columna{
+    width: 50%;
+    float: left;
+  }
+
+  #btnSummit {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #btnCancel {
+    width: 100%;
+    background-color: #c43636;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+  #btnSeguir {
+    width: 45%;
+    background-color: rgb(0, 72, 255);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  
+  #botones{
+    /* align-items: center; */
+    text-align: center;
+    padding-left: 7%;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+    /* overflow: auto; */
+  }
+  
+  #borde{
+    padding-left: 15%;
+    padding-right: 15%;
+    
+  }
+  .button {
+    transition-duration: 0.4s;
+  }
+  
+  #trash:hover {
+    background-color: rgba(255, 13, 0, 0.752); /* Green */
+    color: white;
+  }
+  #edit:hover {
+    background-color: rgba(255, 200, 0, 0.839); 
+    
+    color: white;
+  }
+  #new:hover {
+    background-color: rgb(0, 72, 255); /* Green */
+    color: white;
+  } 
+  #select:hover {
+    background-color: green; /* Green */
+    color: white;
+  } 
+  /* a:hover, a{
+    color: white;
+  } */
+  .colorbtn {
+    color: white;
+  }
+
+  .colorbtn:hover {
+    color: white;
+  }

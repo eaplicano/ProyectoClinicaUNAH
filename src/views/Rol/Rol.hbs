@@ -1,0 +1,29 @@
+<<div>
+ 
+  <h2>Creacion de Roles</h2>
+  <div id="borde">
+    <form  action="" method="POST">
+ 
+    {{!-- Código de Paciente <input id="columna" type="text"  name="COD_PACIENTE">
+ 
+    Codigo Rol <input id="columna" required pattern="[0-5]{0,5}" title="Solo permite números, minimo 8-máximo 13" type="text" placeholder="Codigo del Rol" name="COD_ROL"></input> --}}
+ 
+    Rol <input id="columna" required pattern="[a-zA-Z ]{5,50}" title="Solo se permiten letras" type="text" placeholder="Nombre del Rol" name="ROL"></input> 
+ 
+    Descripcion <input id="columna" required pattern="[a-zA-Z ]{5,50}" title="Solo se permiten letras" type="text" placeholder="Descripcion del rol" name="DES_ROL"></input>
+      
+      <button id="btnSummit" onclick="myFunction()" type="submit" >Guardar</button>
+
+    <script>
+    function myFunction() {
+     alert("Rol Creado");
+    }
+    </script>
+ 
+    </form>
+
+        <button id="btnCancel" ><a class="colorbtn" href="/Rol_Resumen">Cancelar</a></button>
+
+  </div>
+</div>  
+ 

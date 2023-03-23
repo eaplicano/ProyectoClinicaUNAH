@@ -1,0 +1,28 @@
+
+<div>
+
+  <h2>Create Antecedentes</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST">
+      <input type="number" placeholder="Codigo Expediente" name="COD_EXPEDIENTE" value="{{COD_EXPEDIENTE}}" required pattern="[0-9]+"></input>
+
+      <input type="text" placeholder="APP" name="APP" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+      <input type="text" placeholder="APNoP" name="APNoP" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+      <input type="text" placeholder="PATOLOGICO" name="PATOLOGICO" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+      <input type="text" placeholder="A" name="A" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+      <input type="text" placeholder="HV" name="HV" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+      <input type="text" placeholder="PLAN_FAM" name="PLAN_FAM" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+      <input type="text" placeholder="AHTQx" name="AHTQx" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+      <input type="text" placeholder="G" name="G" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+      <input type="text" placeholder="C" name="C" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+      <input type="text" placeholder="Ob" name="Ob" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+      <input type="text" placeholder="HM" name="HM" pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255"></input>
+
+      <button id="btnSummit" type="submit">Guardar</button>
+            
+    </form>
+    <button id="btnCancel" ><a class="colorbtn" href="/expediente">Cancelar</a></button>
+    {{/each}}
+  </div>
+</div>

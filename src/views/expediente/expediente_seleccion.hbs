@@ -1,0 +1,39 @@
+<div>
+  {{!-- <h2>Confirmación de Creación de Expediente</h2> --}}
+  <div id="borde">
+    {{#each select}}
+    <form action="">
+      <h5>Expediente</h5>
+      <input readonly type="text" placeholder="Código de Paciente" name="COD_EXPEDIENTE" value="{{COD_EXPEDIENTE}}">
+
+      <h5>Paciente</h5>
+      <input readonly class="columna" type="text" placeholder="Código de Paciente" name="COD_PACIENTE" value="{{COD_PACIENTE}}">
+
+      <input readonly class="columna" type="number" placeholder="Número de Identidad" name="NUM_IDENTIDAD" value="{{NUM_IDENTIDAD}}"></input>
+
+      <input readonly class="columna" type="text" placeholder="Nombre del Paciente" name="NOM_PACIENTE" value="{{NOM_PACIENTE}}">
+
+      <input readonly class="columna" type="text" placeholder="Apellidos del Paciente" name="APE_PACIENTE" value="{{APE_PACIENTE}}"></input>
+
+      <input readonly class="columna" type="text" placeholder="Fecha de Nacimiento" name="FEC_NACIMIENTO" value="{{FEC_NACIMIENTO}}">
+
+      <input readonly class="columna" type="text" placeholder="Dirección de Domicilio" name="DIR_DOMICILIO" value="{{DIR_DOMICILIO}}"></input>
+
+      <input readonly class="columna" type="text" placeholder="Correo Electrónico" name="DIR_CORREO_ELECTRONICO" value="{{DIR_CORREO_ELECTRONICO}}">
+
+      <input readonly class="columna" type="tel" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" placeholder="Teléfono" name="NUM_TELEFONO" value="{{NUM_TELEFONO}}"></input>
+
+      <input readonly class="columna" type="text" placeholder="Genero" name="GENERO" value="{{GENERO}}">
+
+      <input readonly class="columna" type="text" placeholder="Ocupación" name="OCUPACION" value="{{OCUPACION}}"></input> 
+      <div id="botones">
+        <button id="btnSeguir"><a class="colorbtn" href="/antecedentes/{{COD_EXPEDIENTE}}"><i class="fas fa-check"></i>Antecedentes</a></button>
+        
+        <button id="btnSeguir"><a class="colorbtn" href="/consulta/{{COD_EXPEDIENTE}}"><i class="fas fa-check"></i>Consultas</a> </button>
+      </div>
+
+    </form>
+    
+    {{/each}}
+  </div>
+</div>

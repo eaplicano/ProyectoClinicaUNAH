@@ -1,0 +1,48 @@
+<div>
+  <h2>Detalle de Articulos</h2>
+  <div>
+    <div id="divNew">
+      <a href="/articulo_create">Nuevo Articulo
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Id del Articulo</th>
+            <th class="m-2">Nombre del Articulo</th>
+            <th class="m-2">Monto</th>
+            <th class="m-2">Detalles del Articulo</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+          {{#each tasks}}
+          <tr>
+            <td class="m-2">{{COD_ARTICULO}}</td>
+            <td class="m-2">{{NOM_ARTICULO}}</td>
+            <td class="m-2 ">{{MON_UNITARIO}}</td>
+            <td class="m-2">{{DET_ARTICULO}}</td>
+            
+            {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+            <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+            <td id="actions">
+              <form action="/Articulo/delete" method="POST" class="mx-2">
+                <input type="hidden" value="{{COD_ARTICULO}}" name="id">
+                <button id="trash" type="submit"><i class="fas fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <a href="/Articulo/articulo_edit/{{COD_ARTICULO}}/{{user.USUARIO}}" >
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+            </td>
+          </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>

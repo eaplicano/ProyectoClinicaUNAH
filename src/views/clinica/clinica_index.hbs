@@ -1,0 +1,52 @@
+ 
+<div>
+  <h2>Detalle de la Clinica</h2>
+  <div>
+    <div id="divNew">
+      <a href="/clinica_create">Nueva Clinica
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div>
+    <div id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th class="m-2">Id de Clinica</th>
+            <th class="m-2">Nombre</th>
+            <th class="m-2">Direccion</th>
+             <th class="m-2">Numero</th>
+              <th class="m-2">Correo</th>
+            <th class="m-2">Eliminar</th>
+            <th class="m-2">Modificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="row">
+          {{#each tasks}}
+          <tr>
+            <td class="m-2">{{COD_CLINICA}}</td>
+            <td class="m-2">{{NOM_CLINICA}}</td>
+            <td class="m-2 ">{{DIR_CLINICA}}</td>
+            <td class="m-2 ">{{NUM_TELEFONO}}</td>
+            <td class="m-2 ">{{DIR_CORREO_ELECTR}}</td>
+            
+            
+            <td id="actions"> 
+              <form action="/clinica/delete" method="POST" class="mx-2">
+                <input type="hidden" value="{{COD_CLINICA}}" name="id">
+                <button id="trash" type="submit">
+                  <i class="fas fa-trash"></i></button>
+              </form>
+            </td>
+            <td>
+              <a href="/clinica/clinica_edit/{{COD_CLINICA}}" >
+                <button id="edit"><i class="fas fa-pen"></i></button></a>
+            </td>
+          </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div> 
+  </div>
+</div>
+

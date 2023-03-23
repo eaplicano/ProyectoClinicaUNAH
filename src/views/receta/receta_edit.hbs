@@ -1,0 +1,18 @@
+
+<div>
+
+  <h2>Editar Receta</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      {{!-- <input type="number" placeholder="Codigo Receta name="COD_RECETA" value="{{COD_RECETA}}" required pattern="[0-9]+"></input> --}}
+
+      <input type="text" placeholder="Detalle de Receta" name="DET_RECETA" value="{{DET_RECETA}}" required pattern="[A-Za-z0-9]{5,255}" title="Tamaño máximo: 255" ></input>
+
+      <button id="btnSummit" type="submit">Send</button>
+
+    </form>
+    {{/each}}
+  </div>
+</div> 

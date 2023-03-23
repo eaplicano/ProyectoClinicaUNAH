@@ -1,0 +1,52 @@
+<div>
+  <h2>Estado Articulo</h2>
+    <div>
+    <div id="divNew">
+      <a href="/proveedor_create">Nuevo Proveedor
+      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+    </div> 
+    <div id="tabla">
+      <table>
+        <thead>
+         <tr>
+          <th class="w-20 py-4 ...">Id del Proveedor</th>
+          <th class="w-1/2 py-4 ...">Nombre del Proveedor</th>
+          <th class="w-1/2 py-4 ...">Numero del RTN</th>
+          <th class="w-1/2 py-4 ...">Direccion del establecimiento</th>
+          <th class="w-1/2 py-4 ...">Numero de telefono</th>
+          <th class="w-1/2 py-4 ...">Correo Electronico</th>
+          <th class="w-28 py-4 ...">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="row">
+        {{#each tasks}}
+        <tr>
+          <td class="py-3 px-6">{{COD_PROVEEDOR}}</td>
+          <td class="py-3 px-6">{{NOM_PROVEEDOR}}</td>
+          <td class="py-3 px-6">{{NUM_RTN}}</td>
+          <td class="py-3 px-6">{{DIR_ESTABLECIMIENTO}}</td>
+          <td class="py-3 px-6">{{NUM_TELEFONO}}</td>
+          <td class="py-3 px-6">{{DIR_CORREO_ELECTR}}</td>
+                 
+          {{!-- <td class="p-3 text-center">{{DET_ARTICULO}}</td>
+          <td class="p-3 text-center">{{FEC_CREACION}}</td> --}}
+          <td id="actions">
+            <form action="/Proveedor/delete" method="POST" class="mx-2">
+              <input type="hidden" value="{{COD_PROVEEDOR}}" name="id">
+              <button id="trash" type="submit">
+                <i class="fas fa-trash"></i></button>
+            </form>
+          </td>
+          <td> 
+            <a href="/Proveedor/proveedor_edit/{{COD_PROVEEDOR}}" >
+              <button id="edit"><i class="fas fa-pen"></i></button></a>
+          </td>
+         </tr>
+          {{/each}}
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

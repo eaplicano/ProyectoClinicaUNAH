@@ -1,0 +1,18 @@
+
+<div>
+
+  <h2>Editar Tipo de Consulta</h2>
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      {{!-- <input type="number" placeholder="Codigo Tipo de Consulta" name="COD_TIP_CONSULTA" value="{{COD_TIP_CONSULTA}}" required pattern="[0-9]+"></input> --}} 
+
+      <input type="text" placeholder="Nombre de Tipo de Consulta" name="NOM_TIP_CONSULTA" value="{{NOM_TIP_CONSULTA}}" required pattern="[a-zA-Z]{1,50}" title="Solo se permite texto. Tamaño mínimo: 1. Tamaño máximo: 50" ></input>
+
+      <button id="btnSummit" type="submit">Send</button>
+
+    </form>
+    {{/each}}
+  </div>
+</div> 

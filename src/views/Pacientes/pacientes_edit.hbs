@@ -1,0 +1,35 @@
+<div>
+
+  <h2>Editar Paciente </h2>
+  {{!-- <input type="text" name="user_session" placeholder="" value="{{user.USUARIO}}"></input> --}}
+  <div id="borde">
+    {{#each tasks}}
+    <form action="" method="POST" class="mt-4">
+
+      <input readonly id="columna" type="text" placeholder="Código de Paciente" name="COD_PACIENTE" value="{{COD_PACIENTE}}">
+
+      <input id="columna" type="number" placeholder="Número de Identidad" name="NUM_IDENTIDAD"  value="{{NUM_IDENTIDAD}}"></input>
+
+      <input id="columna" type="text" placeholder="Nombre del Paciente" name="NOM_PACIENTE" value="{{NOM_PACIENTE}}">
+
+      <input id="columna" type="text" placeholder="Apellidos del Paciente" name="APE_PACIENTE" value="{{APE_PACIENTE}}"></input>
+
+      <input id="columna" type="text" placeholder="Fecha de Nacimiento" name="FEC_NACIMIENTO" value="{{FEC_NACIMIENTO}}">
+
+      <input id="columna" type="text" placeholder="Dirección de Domicilio" name="DIR_DOMICILIO" value="{{DIR_DOMICILIO}}"></input>
+
+      <input id="columna" type="text" placeholder="Correo Electrónico" name="DIR_CORREO_ELECTRONICO" value="{{DIR_CORREO_ELECTRONICO}}">
+
+      <input id="columna" type="tel"  placeholder="Teléfono" name="NUM_TELEFONO" value="{{NUM_TELEFONO}}"></input>
+
+      <input id="columna" type="text" placeholder="Genero" name="GENERO" value="{{GENERO}}">
+
+      <input id="columna" type="text" placeholder="Ocupación" name="OCUPACION" value="{{OCUPACION}}"></input> 
+      
+
+      <button id="btnSummit" type="submit" >Guardar</button>
+
+    </form>
+    {{/each}}
+  </div>
+</div>
