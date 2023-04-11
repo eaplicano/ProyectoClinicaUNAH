@@ -3,39 +3,50 @@
   <div>
     <div id="divNew">
       <a href="/pacientes_create">Nuevo Paciente
-      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+        <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+
+      <a href="/pacientes_pdf" target="_blank">Exportar<button id="new"><img
+            src="/img/file-earmark-pdf.svg"
+          /></button></a>
     </div>
     <div id="tabla">
       <table>
         <thead>
           <tr>
-            
+
             <th class="m-2">Id del Paciente</th>
             <th class="m-2">Nombre del Paciente</th>
             <th class="m-2">Apellido del Paciente</th>
             <th class="m-2">Fecha de Nacimiento</th>
-            <th class="m-2">Seleccionar</th>
+            <th class="m-2">Modificar</th>
+            <th class="m-2">Mostrar mas</th>
           </tr>
         </thead>
         <tbody>
           <div class="row">
             {{#each tasks}}
-            <tr>
-              <td >{{COD_PACIENTE}}</td>
-              <td >{{NOM_PACIENTE}}</td>
-              <td >{{APE_PACIENTE}}</td>
-              <td >{{FEC_NACIMIENTO}}</td>
-             
-              <td id="actions">
-                {{!-- <form action="/expediente/expediente_confirmar" method="POST">
+              <tr>
+                <td>{{COD_PACIENTE}}</td>
+                <td>{{NOM_PACIENTE}}</td>
+                <td>{{APE_PACIENTE}}</td>
+                <td>{{FEC_NACIMIENTO}}</td>
+
+                <td id="actions">
+                  {{!-- <form action="/expediente/expediente_confirmar" method="POST">
                   <input type="hidden" value="{{COD_PACIENTE}}" name="id">
                   <button id="trash" type="submit"><i class="fas fa-trash"></i></button>
                 </form> --}}
 
-                <a href="/expediente/expediente_confirmar/{{COD_PACIENTE}}" >
-                <button id="select"><i class="fas fa-check"></i></button></a>
-              </td>
-            </tr>
+                  <a href="/expediente/expediente_confirmar/{{COD_PACIENTE}}">
+                    <button id="select"><img
+                        src="/img/pencil.svg"
+                      /></button></a>
+                </td>
+                <td id="actions">
+                  <a href="/expediente/expediente_visualizar/{{COD_PACIENTE}}">
+                    <button id="select"><img src="/img/eye.svg" /></button></a>
+                </td>
+              </tr>
             {{/each}}
           </div>
         </tbody>

@@ -1,5 +1,5 @@
 <div>
-  <h2>Confirmación de Creación de Expediente</h2>
+  <h2>Expediente</h2>
   <div id="borde">
     {{#each tasks}}
     <form  action="" method="POST" class="row g-3">
@@ -17,49 +17,44 @@
       
       <div class="col-md-6">
         <label for="NUM_IDENTIDAD" class="form-label"> Numero de Identidad</label>      
-        <input readonly class="form-control" type="number" placeholder="Número de Identidad" id="NUM_IDENTIDAD" name="NUM_IDENTIDAD" value="{{NUM_IDENTIDAD}}"autofocus></input>
+        <input disabled class="form-control" type="number" placeholder="Número de Identidad" id="NUM_IDENTIDAD" name="NUM_IDENTIDAD" value="{{NUM_IDENTIDAD}}"autofocus></input>
       </div>
       
       <div class="col-md-6">
         <label for="NOM_PACIENTE" class="form-label"> Nombre del Paciente</label>      
-        <input readonly class="form-control" type="text" placeholder="Nombre del Paciente" id="NOM_PACIENTE" name="NOM_PACIENTE" value="{{NOM_PACIENTE}}" autofocus></input>
+        <input disabled class="form-control" type="text" placeholder="Nombre del Paciente" id="NOM_PACIENTE" name="NOM_PACIENTE" value="{{NOM_PACIENTE}}" autofocus></input>
       </div>
       
       <div class="col-md-6">
         <label for="FEC_NACIMIENTO" class="form-label"> Fecha de Nacimiento</label>      
-        <input readonly class="form-control" type="date" placeholder="Fecha de Nacimiento" id="FEC_NACIMIENTO" name="FEC_NACIMIENTO" value="{{FEC_NACIMIENTO}}"></input>
+        <input disabled class="form-control" type="date" placeholder="Fecha de Nacimiento" id="FEC_NACIMIENTO" name="FEC_NACIMIENTO" value="{{FEC_NACIMIENTO}}"></input>
       </div>
       
       <div class="col-md-6">
         <label for="DIR_DOMICILIO" class="form-label"> Direccion</label>      
-        <input readonly class="form-control" type="text" placeholder="Dirección de Domicilio" id="DIR_DOMICILIO" name="DIR_DOMICILIO" value="{{DIR_DOMICILIO}}"></input>
+        <input disabled class="form-control" type="text" placeholder="Dirección de Domicilio" id="DIR_DOMICILIO" name="DIR_DOMICILIO" value="{{DIR_DOMICILIO}}"></input>
       </div>
       <div class="col-md-6">
         <label for="DIR_CORREO_ELECTRONICO" class="form-label"> Correo Electronico</label>      
-        <input readonly class="form-control" type="text" placeholder="Correo Electrónico" id="DIR_CORREO_ELECTRONICO" name="DIR_CORREO_ELECTRONICO" value="{{DIR_CORREO_ELECTRONICO}}"></input>
+        <input disabled class="form-control" type="text" placeholder="Correo Electrónico" id="DIR_CORREO_ELECTRONICO" name="DIR_CORREO_ELECTRONICO" value="{{DIR_CORREO_ELECTRONICO}}"></input>
       </div>
 
       <div class="col-md-6">
         <label for="NUM_TELEFONO" class="form-label"> No. Telefono</label>      
-        <input readonly class="form-control" type="tel" pattern="[0-9]{8}" placeholder="Teléfono" id="NUM_TELEFONO" name="NUM_TELEFONO" value="{{NUM_TELEFONO}}"></input>
+        <input disabled class="form-control" type="tel" pattern="[0-9]{8}" placeholder="Teléfono" id="NUM_TELEFONO" name="NUM_TELEFONO" value="{{NUM_TELEFONO}}"></input>
       </div>
 
       <div class="col-md-6">
         <label for="GENERO" class="form-label"> Genero</label>      
-        <input readonly class="form-control" type="text" placeholder="Genero" id="GENERO" name="GENERO" value="{{GENERO}}"></input>
+        <input disabled class="form-control" type="text" placeholder="Genero" id="GENERO" name="GENERO" value="{{GENERO}}"></input>
       </div>
 
       <div class="col-md-6">
         <label for="OCUPACION" class="form-label"> Ocupacion</label>      
-        <input readonly class="form-control" type="text" placeholder="Ocupación" id="OCUPACION" name="OCUPACION" value="{{OCUPACION}}"></input> 
+        <input disabled class="form-control" type="text" placeholder="Ocupación" id="OCUPACION" name="OCUPACION" value="{{OCUPACION}}"></input> 
       </div>
-
-      
-
       
       
-      
-      <button id="btnSummit" type="submit" >Send</button>
 
       <button id="btnCancel"><a href="/expediente_paciente">Cancelar</a></button>
     </form>
