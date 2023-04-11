@@ -55,11 +55,11 @@ router.post("/signin", (req, res, next) => {
   const errors = req.validationErrors();
   if (errors.length > 0) {
     req.flash("message", errors[0].msg);
-    //res.redirect("/signin");
+    res.redirect("/signin");
   }
-  //console.log(passport.authenticate("local.signin"));
+  // console.log(passport.authenticate('local.signin'));
   passport.authenticate("local.signin", {
-    successRedirect: "/profile",
+    successRedirect: "/expediente",
     failureRedirect: "/signin",
     failureFlash: true,
   })(req, res, next);
