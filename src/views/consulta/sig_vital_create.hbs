@@ -8,19 +8,42 @@
         {{!-- Código de Preclinica<input type="number" placeholder="Codigo Signos Vitales" name="COD_PRECLINICA" value="{{COD_PRECLINICA}}" required pattern="[0-9]+"></input>  --}}
 
         <h5>Signos Vitales</h5><br>
-         <input  type="textarea" class="columna" placeholder="Presión Arterial" name="DES_PRE_ARTERIAL" value="{{DES_PRE_ARTERIAL}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-          <input  type="text" class="columna" placeholder="Frecuencia Cardiaca" name="DES_FRE_CARDIACA" value="{{DES_FRE_CARDIACA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-          <input  type="text" class="columna" placeholder="Frecuencia Respiratoria" name="DES_FRE_RESPIRATORIA" value="{{DES_FRE_RESPIRATORIA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-         <input  type="text" class="columna" placeholder="Pulso" name="DES_PULSO" value="{{DES_PULSO}}"  pattern="[A-Za-z 0-9 /]+{5,250}" title="Tamaño máximo: 250"></input>
-         <input  type="text" class="columna" placeholder="Temperatura" name="DES_TEMPERATURA" value="{{DES_TEMPERATURA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-         <input  type="text" class="columna" placeholder="Saturación Oxigeno" name="DES_SAT_OXIGENO" value="{{DES_SAT_OXIGENO}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-         <input  type="text" class="columna" placeholder="Talla" name="DES_TALLA" value="{{DES_TALLA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-         <input  type="text" class="columna" placeholder="Peso" name="DES_PESO" value="{{DES_PESO}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-        <input  type="text" class="columna" placeholder="Índice Masa Corporal" name="DES_IND_CORPORAL" value="{{DES_IND_CORPORAL}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-        <input  type="text" class="columna" placeholder="Perímetro cintura" name="DES_CINTURA" value="{{DES_CINTURA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-        <input  type="text" class="columna" placeholder="Perímetro Cadera" name="DES_CADERA" value="{{DES_CADERA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-        <input  type="text" class="columna"  placeholder="Relación cintura/cadera" name="DES_CINTURA_CADERA" value="{{DES_CINTURA_CADERA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
-        
+        <div class="columna">
+        Presión Arterial <input type="textarea" placeholder="Presión Arterial" name="DES_PRE_ARTERIAL" value="{{DES_PRE_ARTERIAL}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div>
+        <div class="columna">
+        Frecuencia Cardiaca <input  type="text"  placeholder="Frecuencia Cardiaca" name="DES_FRE_CARDIACA" value="{{DES_FRE_CARDIACA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div> 
+        <div class="columna">
+        Frecuencia Respiratoria <input  type="text" placeholder="Frecuencia Respiratoria" name="DES_FRE_RESPIRATORIA" value="{{DES_FRE_RESPIRATORIA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div> 
+        <div class="columna">
+        Pulso <input  type="text"  placeholder="Pulso" name="DES_PULSO" value="{{DES_PULSO}}"  pattern="[A-Za-z 0-9 /]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div>
+        <div class="columna">
+        Temperatura<input  type="text"  placeholder="Temperatura" name="DES_TEMPERATURA" value="{{DES_TEMPERATURA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div>
+        <div class="columna">
+        Saturación Oxigeno <input  type="text"  placeholder="Saturación Oxigeno" name="DES_SAT_OXIGENO" value="{{DES_SAT_OXIGENO}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div>
+        <div class="columna">
+        Talla <input  type="text"  placeholder="Talla" name="DES_TALLA" value="{{DES_TALLA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div>
+        <div class="columna">
+        Peso <input  type="text"  placeholder="Peso" name="DES_PESO" value="{{DES_PESO}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div>
+        <div class="columna">
+        Índice Masa Corporal<input  type="text"  placeholder="Índice Masa Corporal" name="DES_IND_CORPORAL" value="{{DES_IND_CORPORAL}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div>
+        <div class="columna">
+        Perímetro cintura<input  type="text"  placeholder="Perímetro cintura" name="DES_CINTURA" value="{{DES_CINTURA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div>
+        <div class="columna">
+        Perímetro Cadera<input  type="text"  placeholder="Perímetro Cadera" name="DES_CADERA" value="{{DES_CADERA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div>
+        <div class="columna">
+        Relación cintura/cadera<input  type="text"   placeholder="Relación cintura/cadera" name="DES_CINTURA_CADERA" value="{{DES_CINTURA_CADERA}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
+        </div>
         <h5>Datos Especificos</h5><br>
         Ojos <input  type="text" placeholder="Descripcion de Signo Vital" name="DES_OJOS" value="{{DES_OJOS}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
         Oídos <input   type="text" placeholder="Descripcion de Signo Vital" name="DES_OIDOS" value="{{DES_OIDOS}}"  pattern="[A-Za-z 0-9 ]+{5,250}" title="Tamaño máximo: 250"></input>
