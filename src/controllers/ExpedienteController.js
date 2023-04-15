@@ -23,7 +23,7 @@ async function exportpdf(req, res) {
     <title>Reporte de Expedientes</title>
   </head>
   <body>
-    <h1>Reporte de Pacientes</h1>
+    <h1>Reporte de Expedientes</h1>
     <table style="border: 1px solid black;">
       <thead>
         <tr>
