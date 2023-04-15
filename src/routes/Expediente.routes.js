@@ -75,6 +75,8 @@ router.post(
 );
 
 router.get("/expediente", isLoggedIn, ExpedienteController.index);
+
+router.get("/expediente_pdf", ExpedienteController.exportpdf);
 router.get("/expediente_create", ExpedienteController.create);
 router.post("/expediente_create", ExpedienteController.store);
 router.post("/expediente/delete", ExpedienteController.destroy);

@@ -3,12 +3,8 @@ const ipp = require("ipp");
 const getStream = require("get-stream");
 const { isLoggedIn } = require("../lib/auth");
 
-//const PDFDocument = require("pdfkit");
-//const pdf = require("html-pdf");
 const puppeteer = require("puppeteer");
 const handlebars = require("handlebars");
-
-const pdfMake = require("pdfmake");
 
 async function index(req, res) {
   // req.getConnection((err, conn) => {
@@ -83,7 +79,7 @@ async function exportpdf(req, res) {
   //console.log(tasks);
 
   const html = template({ tasks });
-  console.log(html);
+
   // Generate the PDF using Puppeteer
   const browser = await puppeteer.launch();
   const page = await browser.newPage();

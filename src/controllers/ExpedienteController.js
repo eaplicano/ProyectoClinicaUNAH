@@ -1,9 +1,11 @@
 const express = require("express");
+const puppeteer = require("puppeteer");
+const handlebars = require("handlebars");
 
 const pool = require("../database");
 async function index(req, res) {
   await pool.query(
-    "select GP_EXPEDIENTE.COD_EXPEDIENTE,GP_PACIENTE.NOM_PACIENTE, GP_PACIENTE.FEC_NACIMIENTO from GP_EXPEDIENTE INNER JOIN GP_PACIENTE ON GP_EXPEDIENTE.COD_PACIENTE = GP_PACIENTE.COD_PACIENTE",
+    "select GP_EXPEDIENTE.COD_EXPEDIENTE,upper(GP_PACIENTE.NOM_PACIENTE)NOM_PACIENTE, GP_PACIENTE.FEC_NACIMIENTO from GP_EXPEDIENTE INNER JOIN GP_PACIENTE ON GP_EXPEDIENTE.COD_PACIENTE = GP_PACIENTE.COD_PACIENTE",
     (err, tasks) => {
       if (err) {
         res.json(err);
@@ -12,6 +14,79 @@ async function index(req, res) {
       res.render("expediente/expediente_index", { tasks });
     }
   );
+}
+
+async function exportpdf(req, res) {
+  const source = `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reporte de Expedientes</title>
+  </head>
+  <body>
+    <h1>Reporte de Pacientes</h1>
+    <table style="border: 1px solid black;">
+      <thead>
+        <tr>
+          <th style="border: 1px solid black;">Codigo de Expediente</th>
+          <th style="border: 1px solid black;">Codigo de Pacientes</th>
+          <th style="border: 1px solid black;">Nombre</th>
+          <th style="border: 1px solid black;">Apellido</th>
+          <th style="border: 1px solid black;">Fecha de Nacimiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each tasks}}
+        <tr>
+          <td style="border: 1px solid black;">{{COD_EXPEDIENTE}}</td>
+          <td style="border: 1px solid black;">{{COD_PACIENTE}}</td>
+          <td style="border: 1px solid black;">{{NOM_PACIENTE}}</td>
+          <td style="border: 1px solid black;">{{APE_PACIENTE}}</td>
+          <td style="border: 1px solid black;">{{FEC_NACIMIENTO}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </body>
+</html>
+  `;
+  const template = handlebars.compile(source);
+
+  const userTable = async () => {
+    return new Promise((resolve, reject) => {
+      pool.query(
+        `select 		a.COD_EXPEDIENTE
+                  ,a.COD_PACIENTE
+                  ,upper(b.NOM_PACIENTE)NOM_PACIENTE
+                        , upper(b.ape_paciente)APE_PACIENTE
+                        ,b.FEC_NACIMIENTO 
+            from 		GP_EXPEDIENTE a
+            INNER JOIN 	GP_PACIENTE b
+            ON 			a.COD_PACIENTE = b.COD_PACIENTE`,
+        (error, tasks) => {
+          if (error) return reject(error); // <= si el proceso falla llamamos a reject y le pasamos el objeto error como argumento
+          const data = tasks;
+          return resolve(data); // <= si el proceso es exitoso llamamos a resolve y le pasamos el objeto data como argumento
+        }
+      );
+    });
+  };
+
+  // Define the data to be used in the template
+  const tasks = await userTable();
+  //console.log(tasks);
+
+  const html = template({ tasks });
+
+  // Generate the PDF using Puppeteer
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.setContent(html);
+  const pdf = await page.pdf({ format: "A2" });
+  await browser.close();
+
+  // Send the PDF as a response
+  res.set("Content-Type", "application/pdf");
+  res.send(pdf);
 }
 
 function create(req, res) {
@@ -336,4 +411,5 @@ module.exports = {
   // busquedaExp: busquedaExp,
   // postSeleccion: postSeleccion,
   indexVisualizar: indexVisualizar,
+  exportpdf: exportpdf,
 };

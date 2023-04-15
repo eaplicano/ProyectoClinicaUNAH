@@ -3,7 +3,10 @@
   <div>
     <div id="divNew">
       <a href="/expediente_paciente">Nuevo Expediente
-      <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+        <button id="new"><i class="fas fa-plus-circle"></i></button></a>
+      <a href="/expediente_pdf" target="_blank">Exportar<button id="new"><img
+            src="/img/file-earmark-pdf.svg"
+          /></button></a>
     </div>
     <div id="tabla">
       <table>
@@ -12,49 +15,54 @@
             <th class="m-2">No. Expediente</th>
             <th class="m-2">Nombre del Paciente</th>
             <th class="m-2">Fecha de Nacimiento</th>
-            {{!-- <th class="m-2">Última Consulta</th> --}}
+            {{! <th class="m-2">Última Consulta</th> }}
             <th class="m-2">Eliminar</th>
             <th class="m-2">Antecedentes</th>
             <th class="m-2">Nueva Consulta</th>
+
           </tr>
         </thead>
         <tbody>
           <div class="row">
             {{#each tasks}}
-            <tr>
-              <td>{{COD_EXPEDIENTE}}</td>
-              <td>{{NOM_PACIENTE}}</td>
-              <td>{{FEC_NACIMIENTO}}</td>
-              {{!-- <td type="date" class="m-2">{{FEC_MODIFICACION}}</td> --}}
-            
-              <td id="actions"> 
-                <form action="/expediente/delete" method="POST" class="mx-2">
-                  <input type="hidden" value="{{COD_EXPEDIENTE}}" name="id">
-                  <button id="trash" type="submit"><i class="fas fa-trash"></i></button>
-                </form>
-              </td>
+              <tr>
+                <td>{{COD_EXPEDIENTE}}</td>
+                <td>{{NOM_PACIENTE}}</td>
+                <td>{{FEC_NACIMIENTO}}</td>
+                {{!-- <td type="date" class="m-2">{{FEC_MODIFICACION}}</td> --}}
+
+                <td id="actions">
+                  <form action="/expediente/delete" method="POST" class="mx-2">
+                    <input type="hidden" value="{{COD_EXPEDIENTE}}" name="id" />
+                    <button id="trash" type="submit"><i
+                        class="fas fa-trash"
+                      ></i></button>
+                  </form>
+                </td>
                 {{!-- <td>
                   <a href="/expediente/expediente_edit/{{COD_EXPEDIENTE}}">
                   <button id="edit"><i class="fas fa-pen"></i></button></a>
                 </td> --}}
                 <td id="actions">
-                  <a href="/expediente/expediente_antecedentes/{{COD_EXPEDIENTE}}">
-                  <button id="select"><i class="fas fa-notes-medical"></i></button></a>
+                  <a
+                    href="/expediente/expediente_antecedentes/{{COD_EXPEDIENTE}}"
+                  >
+                    <button id="select"><i
+                        class="fas fa-notes-medical"
+                      ></i></button></a>
                 </td>
                 <td id="actions">
                   <a href="/expediente/expediente_consulta/{{COD_EXPEDIENTE}}">
-                  <button id="select"><i class="fas fa-check"></i></button></a>
+                    <button id="select"><i
+                        class="fas fa-check"
+                      ></i></button></a>
                 </td>
-                <td id="actions">
-                  <a href="/expediente/expediente_consulta/{{COD_EXPEDIENTE}}">
-                  <button id="select"><img src="/img/eye.svg"/></button></a>
-                </td>
-              </td>
-            </tr>
+
+              </tr>
             {{/each}}
           </div>
         </tbody>
       </table>
-    </div> 
+    </div>
   </div>
 </div>
