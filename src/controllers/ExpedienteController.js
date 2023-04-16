@@ -5,7 +5,7 @@ const handlebars = require("handlebars");
 const pool = require("../database");
 async function index(req, res) {
   await pool.query(
-    "select GP_EXPEDIENTE.COD_EXPEDIENTE,upper(GP_PACIENTE.NOM_PACIENTE)NOM_PACIENTE, GP_PACIENTE.FEC_NACIMIENTO from GP_EXPEDIENTE INNER JOIN GP_PACIENTE ON GP_EXPEDIENTE.COD_PACIENTE = GP_PACIENTE.COD_PACIENTE",
+    `select GP_EXPEDIENTE.COD_EXPEDIENTE,upper(GP_PACIENTE.NOM_PACIENTE)NOM_PACIENTE, DATE_FORMAT(GP_PACIENTE.FEC_NACIMIENTO, "%d/%m/%Y") FEC_NACIMIENTO from GP_EXPEDIENTE INNER JOIN GP_PACIENTE ON GP_EXPEDIENTE.COD_PACIENTE = GP_PACIENTE.COD_PACIENTE`,
     (err, tasks) => {
       if (err) {
         res.json(err);
@@ -199,7 +199,7 @@ async function indexConsulta(req, res) {
 async function indexPaciente(req, res) {
   // req.getConnection((err, conn) => {
   await pool.query(
-    'SELECT COD_PACIENTE, NOM_PACIENTE, APE_PACIENTE, DATE_FORMAT(FEC_NACIMIENTO, "%d/%m/%Y") as FEC_NACIMIENTO FROM GP_PACIENTE',
+    'SELECT COD_PACIENTE, UPPER(NOM_PACIENTE) NOM_PACIENTE, UPPER(APE_PACIENTE) APE_PACIENTE, DATE_FORMAT(FEC_NACIMIENTO, "%d/%m/%Y") as FEC_NACIMIENTO FROM GP_PACIENTE',
     (err, tasks) => {
       if (err) {
         res.json(err);

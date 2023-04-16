@@ -8,7 +8,7 @@ const handlebars = require("handlebars");
 
 async function index(req, res) {
   // req.getConnection((err, conn) => {
-  await pool.query("SELECT * FROM GP_PACIENTE", (err, tasks) => {
+  await pool.query(`SELECT * FROM GP_PACIENTE`, (err, tasks) => {
     if (err) {
       res.json(err);
     }
@@ -66,11 +66,27 @@ async function exportpdf(req, res) {
 
   const userTable = async () => {
     return new Promise((resolve, reject) => {
-      pool.query("SELECT * FROM GP_PACIENTE", (error, tasks) => {
-        if (error) return reject(error); // <= si el proceso falla llamamos a reject y le pasamos el objeto error como argumento
-        const data = tasks;
-        return resolve(data); // <= si el proceso es exitoso llamamos a resolve y le pasamos el objeto data como argumento
-      });
+      pool.query(
+        `SELECT 		COD_PACIENTE
+			              ,NUM_IDENTIDAD
+                    ,upper(NOM_PACIENTE)NOM_PACIENTE
+                    ,UPPER(APE_PACIENTE)APE_PACIENTE
+                    ,DATE_FORMAT(FEC_NACIMIENTO, "%d/%m/%Y")FEC_NACIMIENTO
+                    ,UPPER(DIR_DOMICILIO)DIR_DOMICILIO
+                    ,DIR_CORREO_ELECTRONICO
+                    ,NUM_TELEFONO
+                    ,CASE GENERO
+                    WHEN 'M' THEN 'MASCULITO'
+                    WHEN 'F' THEN 'FEMENINO'
+                    END GENERO
+                    ,UPPER(OCUPACION)OCUPACION
+        FROM 		GP_PACIENTE;`,
+        (error, tasks) => {
+          if (error) return reject(error); // <= si el proceso falla llamamos a reject y le pasamos el objeto error como argumento
+          const data = tasks;
+          return resolve(data); // <= si el proceso es exitoso llamamos a resolve y le pasamos el objeto data como argumento
+        }
+      );
     });
   };
 

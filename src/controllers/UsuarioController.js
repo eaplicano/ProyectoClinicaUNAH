@@ -18,7 +18,7 @@ async function index(req, res) {
   //   }
   //   console.log(users);
   // });
-  await pool.query("SELECT * FROM GP_USUARIO", (err, tasks) => {
+  await pool.query(`SELECT * FROM GP_USUARIO`, (err, tasks) => {
     if (err) {
       res.json(err);
     }
